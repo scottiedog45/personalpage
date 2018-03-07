@@ -1,38 +1,39 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import github from '../../icons/github-512 (1) copy.png'
 
 const Title = styled.h1`
   font-size: 28px;
+  font-family: 'Oxygen', sans-serif;
 `;
 
+const Headerdiv = styled.div`
+  background: black;
+`;
+
+const Icon = styled.img`
+  height: 2em;
+  margin-bottom: 0px;
+  margin-top: 8px;
+`;
+
+const IconWrapper = styled.div`
+  color: white;
+  display: block;
+  text-align: center;
+`;
+
+
+
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Scott O'Toole, web-dev
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <Headerdiv>
+
+        <IconWrapper>
+          <Icon src={github} alt={'github icon'} />
+        </IconWrapper>
+
+  </Headerdiv>
 )
 
 export default Header

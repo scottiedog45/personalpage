@@ -21,7 +21,10 @@ import react from '../icons/react.png'
 import reduxForm from '../icons/redux form.png'
 
 import piqnicShot from '../screenshots/piqnic.png'
+
 import haikuMac from '../screenshots/haikuMac.png'
+import haikuTablet from '../screenshots/haikuTablet.png'
+import haikuPhone from '../screenshots/haikuIphone.png'
 
 import Scrollchor from 'react-scrollchor'
 
@@ -125,7 +128,20 @@ const PicniqScreenshot = styled.img`
   height: 300px;
 `;
 
+const Imac = styled.img`
+  height: 300px
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
+const Tablet = styled.img`
+  height: 200px;
+`;
+
+const Phone = styled.img`
+  height: 250px;
+`;
 
 const IndexPage = () => (
   <div>
@@ -169,9 +185,9 @@ const IndexPage = () => (
       target={'_blank'}>
         www.piqnic.com
       </Url>
-      <PicniqScreenshot src={piqnicShot} alt={'picnic screenshot'} />
+
        <Description>
-        Description: An app that helps you quickly plan a picnic.
+        An app that helps you quickly plan a picnic.
       </Description>
       <IconWrapper>
         <Icon src={html} alt={'html logo'} />
@@ -190,7 +206,12 @@ const IndexPage = () => (
         target={'_blank'}>
         www.haikoo.com
       </Url>
-      <img src={haikuMac} />
+      <div>
+
+
+      <Imac src={haikuMac} />
+
+      </div>
       <Description>
         An app that syllable-checks your haiku, and let's you post and vote on other haikus!
       </Description>

@@ -220,7 +220,6 @@ const IndexPage = () => (
         <Icon src={css} alt={'css logo'} />
         <Icon src={js} alt={'js logo'} />
         <Icon src={jquery} alt={'jquery logo'} />
-        <br />
         <Icon src={mocha} alt={'mocha logo'} />
         <Icon src={chai} alt={'chai logo'} />
         <Icon src={express} alt={'express logo'} />

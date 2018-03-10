@@ -40,7 +40,7 @@ const Panel = styled.div`
   font-family: 'Raleway', sans-serif;
   padding-top: 58px;
   padding-bottom: 80px;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const RadarPanel = Panel.extend`

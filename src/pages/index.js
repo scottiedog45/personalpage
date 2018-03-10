@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
+
 import styled from 'styled-components'
+
 import chai from '../icons/chai.png'
 import css from '../icons/css.png'
 import express from '../icons/expressjslogo.png'
@@ -10,7 +12,6 @@ import html from '../icons/html5.png'
 import jest from '../icons/jest.png'
 import jquery from '../icons/jquery.png'
 import js from '../icons/js.png'
-
 import redux from '../icons/redux.png'
 import mocha from '../icons/mocha (1).png'
 import node from '../icons/node.png'
@@ -210,7 +211,6 @@ const IndexPage = () => (
         scroll
         <br />
         or
-        <FontAwesome className='edit' />
       </ScrollAnimation>
       <ButtonWrapper>
         <Scrollchor to='#work'>

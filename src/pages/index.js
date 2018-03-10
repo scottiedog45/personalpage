@@ -316,7 +316,7 @@ const IndexPage = () => (
         <Icon src={node} alt={'node logo'} />
       </IconWrapper>
       <Description>
-        Leev uses a simple interface to help you track your group's leave data.
+        Leev uses a simple interface to help you track your leave data.
       </Description>
     </Panel>
   </div>

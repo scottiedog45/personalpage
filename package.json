@@ -10,6 +10,7 @@
     "npm": "^5.7.1",
     "prettier": "^1.11.1",
     "react-fontawesome": "^1.6.1",
+    "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-scrollchor": "^4.2.1",
     "styled-components": "^3.2.1"

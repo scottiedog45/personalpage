@@ -20,8 +20,6 @@ import reduxForm from '../icons/redux form.png'
 import haikuMac from '../screenshots/haikuMac.png'
 import leevMac from '../screenshots/leevMac.png'
 import piqnicMac from '../screenshots/piqnicMac.png'
-import haikuTablet from '../screenshots/haikuTablet.png'
-import haikuPhone from '../screenshots/haikuPhone.png'
 
 import Scrollchor from 'react-scrollchor'
 import FontAwesome from 'react-fontawesome';
@@ -68,16 +66,12 @@ const ProjectTitle = styled.h1`
 `;
 
 const Panel2 = Panel.extend`
-
 `;
 
 const Panel3 = Panel.extend`
-
-
 `;
 
 const Panel4 = Panel.extend`
-
 `;
 
 const ButtonWrapper = styled.div`
@@ -124,7 +118,6 @@ const IconWrapper = styled.div`
 
 const Icon = styled.img`
   height: 20px;
-
 `;
 
 const Footer = styled.div`
@@ -207,54 +200,36 @@ const HeyThere = styled.h1`
   margin-bottom: 0px;
 `;
 
-const data = {
-  labels: ['Javascript', 'React', 'Node', 'Testing', 'MongoDB', 'Redux'],
-  datasets: [
-    {
-      label: 'My skillset',
-      backgroundColor: 'rgba(179,181,198,0.2)',
-      borderColor: 'rgba(179,181,198,1)',
-      pointBackgroundColor: 'rgba(179,181,198,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(179,181,198,1)',
-      data: [90, 80, 70, 60, 75, 80]
-    }
-  ]
-};
-
 const IndexPage = () => (
   <div>
     <TitlePanel>
-    <Welcome>Welcome! My name is</Welcome>
-    <Name>Scott O'Toole.</Name>
-    <Subtitle>
-      I'm your web developer. I build engaging and delightful apps.
-    </Subtitle>
-    <ScrollAnimation>
-      scroll
-    <br />
-      or
-      <FontAwesome className='edit' />
+      <Welcome>Welcome! My name is</Welcome>
+      <Name>Scott O'Toole.</Name>
+      <Subtitle>
+        I'm your web developer. I build engaging and delightful apps.
+      </Subtitle>
+      <ScrollAnimation>
+        scroll
+        <br />
+        or
+        <FontAwesome className='edit' />
       </ScrollAnimation>
       <ButtonWrapper>
         <Scrollchor to='#work'>
-        <Button>
-          See my work
-        </Button>
+          <Button>
+            See my work
+          </Button>
         </Scrollchor>
       </ButtonWrapper>
-
-        <ContactFloater>
-          <FaEnvelope />
-          <FaGithubSquare />
-          <FaLinkedinSquare />
-        </ContactFloater>
-
+      <ContactFloater>
+        <FaEnvelope />
+        <FaGithubSquare />
+        <FaLinkedinSquare />
+      </ContactFloater>
     </TitlePanel>
-  <Panel1>
-    <HeyThere>Hey, there!</HeyThere>
-    <h2>My goal is to connect people with beautiful solutions.</h2>
+    <Panel1>
+      <HeyThere>Hey, there!</HeyThere>
+      <h2>My goal is to connect people with beautiful solutions.</h2>
       <Bio>
         I'm a recent graduate of the Front End
         Web Development bootcamp at Thinkful. I love how web development
@@ -273,7 +248,7 @@ const IndexPage = () => (
     </Panel1>
     <hr />
     <Panel id={'work'}>
-    <a id={'work'} />
+      <a id={'work'} />
       <ProjectTitle>
         Piqnic
       </ProjectTitle>
@@ -292,7 +267,6 @@ const IndexPage = () => (
        <Description>
         An app that helps you quickly plan a picnic.
       </Description>
-
     </Panel>
     <hr />
     <Panel>
@@ -318,7 +292,6 @@ const IndexPage = () => (
       <Description>
         An app that syllable-checks your haiku, and let's you post and vote on other haikus!
       </Description>
-
     </Panel>
     <hr />
     <Panel>
@@ -330,7 +303,6 @@ const IndexPage = () => (
         target={'_blank'}>
         www.leev.com
       </Url>
-
       <img src={leevMac} alt={'screenshot of leev app'} />
       <IconWrapper>
         <Icon src={html} alt={'html logo'} />
@@ -348,7 +320,6 @@ const IndexPage = () => (
       <Description>
         Leev uses a simple interface to help you track your group's leave data.
       </Description>
-
     </Panel>
   </div>
 )

@@ -26,8 +26,6 @@ import FontAwesome from 'react-fontawesome';
 
 import {media} from './style-utils'
 
-import {Radar} from 'react-chartjs-2';
-
 import {FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
 
 const Button = styled.button`

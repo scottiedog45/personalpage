@@ -1,31 +1,31 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "The default Gatsby starter",
+  "main": "gatsby-browser.js",
   "dependencies": {
     "gatsby": "^1.9.231",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-react-helmet": "^2.0.7",
     "npm": "^5.7.1",
+    "prettier": "^1.11.1",
     "react-fontawesome": "^1.6.1",
-    "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-scrollchor": "^4.2.1",
     "styled-components": "^3.2.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
+  "devDependencies": {},
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
-  "devDependencies": {
-    "prettier": "^1.11.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottiedog45/personalpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottiedog45/personalpage/issues"
+  },
+  "homepage": "https://github.com/scottiedog45/personalpage#readme"
 }

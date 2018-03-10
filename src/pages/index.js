@@ -25,7 +25,7 @@ import piqnicMac from '../screenshots/piqnicMac.png'
 import Scrollchor from 'react-scrollchor'
 import FontAwesome from 'react-fontawesome';
 
-import {media} from './style-utils'
+import {media} from '../style-utils'
 
 import {FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
 

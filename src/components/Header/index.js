@@ -24,15 +24,11 @@ const IconWrapper = styled.div`
   text-align: center;
 `;
 
-
-
 const Header = () => (
   <Headerdiv>
-
-        <IconWrapper>
-          <Icon src={github} alt={'github icon'} />
-        </IconWrapper>
-
+    <IconWrapper>
+      <Icon src={github} alt={'github icon'} />
+    </IconWrapper>
   </Headerdiv>
 )
 

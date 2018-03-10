@@ -1,10 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-// import js from '../icons/js.png'
-// import html from '../icons/html5.png'
-// import css from '../icons/css.svg.png'
-// import jquery from '../icons/jquery.svg.png'
 import chai from '../icons/chai.png'
 import css from '../icons/css.png'
 import express from '../icons/expressjslogo.png'
@@ -14,20 +10,27 @@ import html from '../icons/html5.png'
 import jest from '../icons/jest.png'
 import jquery from '../icons/jquery.png'
 import js from '../icons/js.png'
+
 import redux from '../icons/redux.png'
 import mocha from '../icons/mocha (1).png'
 import node from '../icons/node.png'
 import react from '../icons/react.png'
 import reduxForm from '../icons/redux form.png'
 
-import piqnicShot from '../screenshots/piqnic.png'
-
 import haikuMac from '../screenshots/haikuMac.png'
+import leevMac from '../screenshots/leevMac.png'
+import piqnicMac from '../screenshots/piqnicMac.png'
 import haikuTablet from '../screenshots/haikuTablet.png'
-import haikuPhone from '../screenshots/haikuIphone.png'
+import haikuPhone from '../screenshots/haikuPhone.png'
 
 import Scrollchor from 'react-scrollchor'
+import FontAwesome from 'react-fontawesome';
 
+import {media} from './style-utils'
+
+import {Radar} from 'react-chartjs-2';
+
+import {FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
 
 const Button = styled.button`
   border-color: black;
@@ -38,17 +41,30 @@ const Button = styled.button`
 
 const Panel = styled.div`
   font-family: 'Raleway', sans-serif;
+  padding-top: 58px;
+  padding-bottom: 80px;
+  height: 100vh;
+`;
+
+const RadarPanel = Panel.extend`
+  height: 100vh;
+`;
+
+const TitlePanel = Panel.extend`
+  height: 100vh;
 `;
 
 const Panel1= Panel.extend`
   padding-top: 2em;
 `;
 
-const ProjectTitle = styled.p`
-  font-size: 1.5em;
+const ProjectTitle = styled.h1`
   margin-bottom: 0px;
   display: block;
   text-align: center;
+  ${media.handheld`
+    font-size: 80px;
+    `}
 `;
 
 const Panel2 = Panel.extend`
@@ -71,15 +87,19 @@ const ButtonWrapper = styled.div`
 
 const Subtitle = styled.p`
   text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 23px;
+  width: 75%
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
 `;
 
 const Bio = styled.p`
-`
+  font-size: 21px;
+`;
 
 const Description = styled.p`
-  margin-top: 20px;
+  margin-top: 50px;
   display: block;
   text-align: center;
 `;
@@ -89,20 +109,21 @@ const Url = styled.a`
   cursor: pointer;
   display: block;
   text-align: center;
+  padding-bottom: 80px;
 `;
 
 const IconWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width: 80%;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
+  bottom: 20px;
 `;
 
 const Icon = styled.img`
-  height: 30px;
+  height: 20px;
 
 `;
 
@@ -111,17 +132,21 @@ const Footer = styled.div`
 `;
 
 const FooterIcon = Icon.extend`
+  margin-top: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 `;
 
-const Name = styled.p`
+const Name = styled.h1`
   display: block;
   text-align: center;
-  font-size: 2em;
-  padding-top: 2em;
-  padding-bottom: 1em;
+  font-size: 130px;
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 0px;
+  ${media.handheld`
+    font-size: 80px;
+    `}
 `;
 
 const PicniqScreenshot = styled.img`
@@ -143,35 +168,107 @@ const Phone = styled.img`
   height: 250px;
 `;
 
+const Welcome = styled.p`
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 0px;
+`;
+
+const ScrollAnimation = styled.div`
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+`;
+
+const Canvas = styled.canvas`
+  height: 400px;
+  width: 400px;
+`;
+
+const ContactFloater = styled.div`
+  font-size: 40px;
+  display: flex;
+  margin-top: 70px;
+  position: fixed;
+  text-align: right;
+  right: 10px;
+  color: #e94889;
+  justify-content: space-between;
+  width: 45vw;
+  bottom: 1vw;
+`;
+
+const ContactIcon = styled.img`
+  height: 50px;
+  margin-left: 20px;
+`;
+
+const HeyThere = styled.h1`
+  margin-bottom: 0px;
+`;
+
+const data = {
+  labels: ['Javascript', 'React', 'Node', 'Testing', 'MongoDB', 'Redux'],
+  datasets: [
+    {
+      label: 'My skillset',
+      backgroundColor: 'rgba(179,181,198,0.2)',
+      borderColor: 'rgba(179,181,198,1)',
+      pointBackgroundColor: 'rgba(179,181,198,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(179,181,198,1)',
+      data: [90, 80, 70, 60, 75, 80]
+    }
+  ]
+};
+
 const IndexPage = () => (
   <div>
-    <Panel>
-    <Name>
-      Scott O'Toole, web-dev
-    </Name>
+    <TitlePanel>
+    <Welcome>Welcome! My name is</Welcome>
+    <Name>Scott O'Toole.</Name>
     <Subtitle>
-      Hey there! My name is Scott, and I'm your web developer.
+      I'm your web developer. I build engaging and delightful apps.
     </Subtitle>
+    <ScrollAnimation>
+      scroll
+    <br />
+      or
+      <FontAwesome className='edit' />
+      </ScrollAnimation>
       <ButtonWrapper>
         <Scrollchor to='#work'>
+        <Button>
           See my work
+        </Button>
         </Scrollchor>
       </ButtonWrapper>
-    </Panel>
-    <Panel1>
+
+        <ContactFloater>
+          <FaEnvelope />
+          <FaGithubSquare />
+          <FaLinkedinSquare />
+        </ContactFloater>
+
+    </TitlePanel>
+  <Panel1>
+    <HeyThere>Hey, there!</HeyThere>
+    <h2>My goal is to connect people with beautiful solutions.</h2>
       <Bio>
         I'm a recent graduate of the Front End
         Web Development bootcamp at Thinkful. I love how web development
         combines quantitative and qualitative problem solving skills, which
-        is why I've chosen it as a career path. I'm excited by innovation,
+        is why I've chosen it as a career path.
+        <br /><br />
+        I'm excited by innovation,
         and always driven to find solutions that are efficient and artistic.
         <br /> <br />
-        My curiosity has led me on adventures through several career fields
-        including classical music performance, artistic administration, actuarial
-        science, and now... coding! I feel most at home in front of my laptop, either
-        learning a slick new library or designing the website for a business. At some
+        At some
         point I drank the CrossFit kool-aid, so if my computer is off you can also find
         me in a local gym racking up some burpees!
+        <br /><br />
+        Continue scrolling to see examples of my work.
       </Bio>
     </Panel1>
     <hr />
@@ -185,16 +282,17 @@ const IndexPage = () => (
       target={'_blank'}>
         www.piqnic.com
       </Url>
-
-       <Description>
-        An app that helps you quickly plan a picnic.
-      </Description>
+      <img src={piqnicMac} alt={'screenshot of piqnic app'} />
       <IconWrapper>
         <Icon src={html} alt={'html logo'} />
         <Icon src={css} alt={'css logo'} />
         <Icon src={js} alt={'js logo'} />
         <Icon src={jquery} alt={'jquery logo'} />
       </IconWrapper>
+       <Description>
+        An app that helps you quickly plan a picnic.
+      </Description>
+
     </Panel>
     <hr />
     <Panel>
@@ -206,15 +304,7 @@ const IndexPage = () => (
         target={'_blank'}>
         www.haikoo.com
       </Url>
-      <div>
-
-
-      <Imac src={haikuMac} />
-
-      </div>
-      <Description>
-        An app that syllable-checks your haiku, and let's you post and vote on other haikus!
-      </Description>
+      <img src={haikuMac} alt={'screenshot of Haiku app'} />
       <IconWrapper>
         <Icon src={html} alt={'html logo'} />
         <Icon src={css} alt={'css logo'} />
@@ -225,6 +315,10 @@ const IndexPage = () => (
         <Icon src={express} alt={'express logo'} />
         <Icon src={node} alt={'node logo'} />
       </IconWrapper>
+      <Description>
+        An app that syllable-checks your haiku, and let's you post and vote on other haikus!
+      </Description>
+
     </Panel>
     <hr />
     <Panel>
@@ -236,9 +330,8 @@ const IndexPage = () => (
         target={'_blank'}>
         www.leev.com
       </Url>
-      <Description>
-        Leev uses a simple interface to help you track your group's leave data.
-      </Description>
+
+      <img src={leevMac} alt={'screenshot of leev app'} />
       <IconWrapper>
         <Icon src={html} alt={'html logo'} />
         <Icon src={styledcomponents} alt={'styled components logo'} />
@@ -246,25 +339,17 @@ const IndexPage = () => (
         <Icon src={react} alt={'react logo'} />
         <Icon src={redux} alt={'redux logo'} />
         <Icon src={reduxForm} alt={'redux form logo'} />
-        <br />
         <Icon src={mocha} alt={'mocha logo'} />
         <Icon src={jest} alt={'jest logo'} />
         <Icon src={chai} alt={'chai logo'} />
         <Icon src={express} alt={'express logo'} />
         <Icon src={node} alt={'node logo'} />
       </IconWrapper>
+      <Description>
+        Leev uses a simple interface to help you track your group's leave data.
+      </Description>
+
     </Panel>
-    <hr />
-    <Footer>
-      <a href={'mailto:scottiedog45@gmail.com'}>
-        Send me a message
-      </a>
-      <a
-        href={'https://github.com/scottiedog45'}
-        target={'_blank'}>
-        <FooterIcon src={githublogo} alt={'github logo'} />
-      </a>
-    </Footer>
   </div>
 )
 

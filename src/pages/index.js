@@ -203,9 +203,9 @@ const IndexPage = () => (
   <div>
     <TitlePanel>
       <Welcome>Welcome! My name is</Welcome>
-      <Name>Scott O'Toole.</Name>
+      <Name>Scott O&#39;Toole.</Name>
       <Subtitle>
-        I'm your web developer. I build engaging and delightful apps.
+        I&#39;m your web developer. I build engaging and delightful apps.
       </Subtitle>
       <ScrollAnimation>
         scroll
@@ -229,12 +229,12 @@ const IndexPage = () => (
       <HeyThere>Hey, there!</HeyThere>
       <h2>My goal is to connect people with beautiful solutions.</h2>
       <Bio>
-        I'm a recent graduate of the Front End
+        I&#39;m a recent graduate of the Front End
         Web Development bootcamp at Thinkful. I love how web development
         combines quantitative and qualitative problem solving skills, which
-        is why I've chosen it as a career path.
+        is why I&#39;ve chosen it as a career path.
         <br /><br />
-        I'm excited by innovation,
+        I&#39;m excited by innovation,
         and always driven to find solutions that are efficient and artistic.
         <br /> <br />
         At some
@@ -288,7 +288,7 @@ const IndexPage = () => (
         <Icon src={node} alt={'node logo'} />
       </IconWrapper>
       <Description>
-        An app that syllable-checks your haiku, and let's you post and vote on other haikus!
+        An app that syllable-checks your haiku, and let&#39;s you post and vote on other haikus!
       </Description>
     </Panel>
     <hr />

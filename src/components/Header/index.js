@@ -1,34 +1,48 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import github from '../../icons/github-512 (1) copy.png'
 
-const Title = styled.h1`
-  font-size: 28px;
-  font-family: 'Oxygen', sans-serif;
-`;
+import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
+
+import FontAwesome from 'react-fontawesome';
 
 const Headerdiv = styled.div`
   background: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
-const Icon = styled.img`
-  height: 2em;
-  margin-bottom: 0px;
-  margin-top: 8px;
+const ContactFloater = styled.div`
+  font-size: 40px;
+  display: flex;
+  color: #e94889;
+  justify-content: space-around;
+  background: black;
 `;
 
-const IconWrapper = styled.div`
-  color: white;
-  display: block;
-  text-align: center;
+const ContactLink = styled.a`
+  color: inherit;
+`;
+
+const ContactIcon = styled.img`
+  height: 50px;
+  margin-left: 20px;
 `;
 
 const Header = () => (
   <Headerdiv>
-    <IconWrapper>
-      <Icon src={github} alt={'github icon'} />
-    </IconWrapper>
+  <ContactFloater>
+    <ContactLink
+      href={'mailto:scottiedog45@gmail.com'}>
+      <FaEnvelope />
+    </ContactLink>
+    <ContactLink href={'https://github.com/scottiedog45'}target={'_blank'}>
+      <FaGithubSquare />
+    </ContactLink>
+    <ContactLink href={'https://www.linkedin.com/in/scott-o-toole-8b35b01b/'}target={'_blank'}>
+      <FaLinkedinSquare />
+    </ContactLink>
+  </ContactFloater>
   </Headerdiv>
 )
 

@@ -68,7 +68,7 @@ const ProjectTitle = styled.h1`
   display: block;
   text-align: center;
   ${media.handheld`
-    font-size: 80px;
+    font-size: 90px;
     `}
 `;
 
@@ -84,6 +84,8 @@ const Panel4 = Panel.extend`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 `;
 
 const Subtitle = styled.p`
@@ -96,21 +98,24 @@ const Subtitle = styled.p`
 `;
 
 const Bio = styled.p`
-  font-size: 21px;
+  font-size: 17px;
 `;
 
 const Description = styled.p`
   margin-top: 50px;
   display: block;
-  text-align: center;
+  text-align: justify;
 `;
 
 const Url = styled.a`
   text-decoration: none;
   cursor: pointer;
-  display: block;
+  margin-left: 10px;
+  color: #e94889;
+`;
+
+const UrlWrapper = styled.div`
   text-align: center;
-  padding-bottom: 80px;
 `;
 
 const IconWrapper = styled.div`
@@ -141,7 +146,7 @@ const FooterIcon = Icon.extend`
 const Name = styled.h1`
   display: block;
   text-align: center;
-  font-size: 130px;
+  font-size: 75px;
   font-family: 'Anton', sans-serif;
   margin-bottom: 0px;
   ${media.handheld`
@@ -176,8 +181,6 @@ const Welcome = styled.p`
 
 const ScrollAnimation = styled.div`
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
 `;
 
 const Canvas = styled.canvas`
@@ -185,28 +188,7 @@ const Canvas = styled.canvas`
   width: 400px;
 `;
 
-const ContactFloater = styled.div`
-  z-index: 3;
-  font-size: 40px;
-  display: flex;
-  margin-top: 70px;
-  position: fixed;
-  text-align: right;
-  right: 10px;
-  color: #e94889;
-  justify-content: space-between;
-  width: 45vw;
-  bottom: 1vw;
-`;
 
-const ContactLink = styled.a`
-  color: inherit;
-`;
-
-const ContactIcon = styled.img`
-  height: 50px;
-  margin-left: 20px;
-`;
 
 const HeyThere = styled.h1`
   margin-bottom: 0px;
@@ -222,6 +204,12 @@ const Screenshot = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 80px;
+`;
+
+const Copyright = styled.p`
+  display: block;
+  text-align: center;
 `;
 
 const IndexPage = () => (
@@ -230,14 +218,6 @@ const IndexPage = () => (
       <Welcome>Welcome! My name is</Welcome>
       <Name>Scott O&#39;Toole.</Name>
       <Subtitle>I&#39;m your web developer. I build engaging and delightful apps.</Subtitle>
-      <ScrollAnimation>
-        scroll
-        <br />
-        <FaAngleDoubleDown />
-        <br />
-          or
-        <br />
-      </ScrollAnimation>
       <ButtonWrapper>
         <Scrollchor to='#work'>
           <Button>
@@ -250,17 +230,12 @@ const IndexPage = () => (
           </Button>
         </a>
       </ButtonWrapper>
-      <ContactFloater>
-        <ContactLink href={'mailto:scottiedog45@gmail.com'}>
-          <FaEnvelope />
-        </ContactLink>
-        <ContactLink href={'https://github.com/scottiedog45'}>
-          <FaGithubSquare />
-        </ContactLink>
-        <ContactLink href={'https://www.linkedin.com/in/scott-o-toole-8b35b01b/'}>
-          <FaLinkedinSquare />
-        </ContactLink>
-      </ContactFloater>
+      <ScrollAnimation>
+        scroll
+        <br />
+        <FaAngleDoubleDown />
+        <br />
+      </ScrollAnimation>
     </TitlePanel>
     <Panel1>
     <Card>
@@ -271,8 +246,8 @@ const IndexPage = () => (
         </Fade>
         <Fade up>
           <Bio>
-            I&#39;m a recent graduate of the Front End
-            Web Development bootcamp at Thinkful. I love how web development
+            I&#39;m a recent graduate of the Full Stack
+            Web Development program at Thinkful. I love how web development
             combines quantitative and qualitative problem solving skills, which
             is why I&#39;ve chosen it as a career path.
             <br /><br />
@@ -302,11 +277,18 @@ const IndexPage = () => (
           <ProjectTitle>
             Piqnic
           </ProjectTitle>
+          <UrlWrapper>
           <Url
             href={'https://diplomat-cat-50211.netlify.com/'}
             target={'_blank'}>
-            www.piqnic.com
+            Live Site
           </Url>
+          <Url
+            href={'https://github.com/scottiedog45/piqnic'}
+            target={'_blank'}>
+            Github Repo
+          </Url>
+          </UrlWrapper>
         </Fade>
         <Fade up>
           <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
@@ -317,7 +299,7 @@ const IndexPage = () => (
             <Icon src={jquery} alt={'jquery logo'} />
           </IconWrapper>
           <Description>
-            An app that helps you quickly plan a picnic.
+           This project is combines the Google Maps API and the Open Weather API. My goal was to create an 'as simple as possible' user input to get the maximum response. One only has to enter their zipcode, and piqnic will find local parks in the area, and also display the weather for the next two days (perfect for weekend planning!).
           </Description>
         </Fade>
       </Card>
@@ -329,11 +311,18 @@ const IndexPage = () => (
           <ProjectTitle>
             hai·koo
           </ProjectTitle>
+          <UrlWrapper>
           <Url
             href={'https://young-springs-68250.herokuapp.com/'}
             target={'_blank'}>
-            www.haikoo.com
+            Live Site
           </Url>
+          <Url
+            href={'https://github.com/scottiedog45/haiku'}
+            target={'_blank'}>
+            Github Repo
+          </Url>
+          </UrlWrapper>
         </Fade>
         <Fade up>
           <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
@@ -348,7 +337,7 @@ const IndexPage = () => (
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
           <Description>
-            An app that syllable-checks your haiku, and let&#39;s you post and vote on other haikus!
+            This app uses the Words API to check syllable count of written line, and allows the user to submit a haiku if the syllables follow a 5-7-5 count. I was a bit naive in choosing this subject matter, as it&#39;s well documented that computers don&#39;t do a great job of quantifing language (ex. 'library' and 'extraordinary' are both listed with multiple syllable counts in the Oxford Dictionary). So, my original concept of 'app that counts syllables' narrowed to 'how many syllables does this API think this line has?' :). Upon approval, the haiku will be displayed. Users can see past haiku submissions, and upvote their favorites.
           </Description>
         </Fade>
       </Card>
@@ -360,11 +349,18 @@ const IndexPage = () => (
           <ProjectTitle>
             Leev
           </ProjectTitle>
+          <UrlWrapper>
           <Url
             href={'https://xenodochial-pare-c355a0.netlify.com/'}
             target={'_blank'}>
-            www.leev.com
+            Live Site
           </Url>
+          <Url
+            href={'https://github.com/scottiedog45/haiku'}
+            target={'_blank'}>
+            Github Repo
+          </Url>
+          </UrlWrapper>
         </Fade>
         <Fade up>
           <Screenshot src={leevMac} alt={'screenshot of leev app'} />
@@ -382,11 +378,12 @@ const IndexPage = () => (
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
           <Description>
-            Leev uses a simple interface to help you track your leave data.
+            This app began as a conversation between myself and an overworked personnel manager. This manager didn&#39;t have an efficient solution to tracking leave data for for their group. I made this app to help. You can create services, members, and reasons for a members leave. All a member&#39;s leave data is then collected and displayed in their individual profile. You can create an account, or use the demo to preview the app =).
           </Description>
         </Fade>
       </Card>
     </Panel>
+    <Copyright>&copy; Scott O&#39;Toole</Copyright>
   </div>
 )
 

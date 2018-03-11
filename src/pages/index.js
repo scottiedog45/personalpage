@@ -42,7 +42,6 @@ const Button = styled.button`
   ${media.handheld`
     width: 30vw;
     `}
-
 `;
 
 const Panel = styled.div`
@@ -230,15 +229,13 @@ const IndexPage = () => (
     <TitlePanel>
       <Welcome>Welcome! My name is</Welcome>
       <Name>Scott O&#39;Toole.</Name>
-      <Subtitle>
-        I&#39;m your web developer. I build engaging and delightful apps.
-      </Subtitle>
+      <Subtitle>I&#39;m your web developer. I build engaging and delightful apps.</Subtitle>
       <ScrollAnimation>
         scroll
         <br />
         <FaAngleDoubleDown />
         <br />
-        or
+          or
         <br />
       </ScrollAnimation>
       <ButtonWrapper>
@@ -248,149 +245,146 @@ const IndexPage = () => (
           </Button>
         </Scrollchor>
         <a href={'mailto:scottiedog45@gmail.com'}>
-        <Button>
-          get in touch
-        </Button>
+          <Button>
+            get in touch
+          </Button>
         </a>
       </ButtonWrapper>
       <ContactFloater>
         <ContactLink href={'mailto:scottiedog45@gmail.com'}>
-        <FaEnvelope />
+          <FaEnvelope />
         </ContactLink>
         <ContactLink href={'https://github.com/scottiedog45'}>
-        <FaGithubSquare />
+          <FaGithubSquare />
         </ContactLink>
         <ContactLink href={'https://www.linkedin.com/in/scott-o-toole-8b35b01b/'}>
-        <FaLinkedinSquare />
+          <FaLinkedinSquare />
         </ContactLink>
       </ContactFloater>
     </TitlePanel>
     <Panel1>
     <Card>
       <Fade left>
-
-      <HeyThere>Hey, there!</HeyThere>
-      <br />
-      <h2>My goal is to connect people with beautiful solutions.</h2>
-      </Fade>
-      <Fade up>
-
-      <Bio>
-        I&#39;m a recent graduate of the Front End
-        Web Development bootcamp at Thinkful. I love how web development
-        combines quantitative and qualitative problem solving skills, which
-        is why I&#39;ve chosen it as a career path.
-        <br /><br />
-        I&#39;m excited by innovation,
-        and always driven to find solutions that are efficient and artistic.
-        <br /> <br />
-        <b>Front-end:</b> React, Redux, Redux-Form, Jquery, Css, Html, Styled-components
+        <HeyThere>Hey, there!</HeyThere>
         <br />
-        Back-end: Node, Express
-        <br />
-        Testing: Mocha, Chai, Enzyme, Jest
-        <br /> <br />
-        At some
-        point I drank the CrossFit kool-aid, so if my computer is off you can also find
-        me in a local gym racking up some burpees!
-        <br /><br />
-        Continue scrolling to see examples of my work.
-      </Bio>
-
-      </Fade>
+        <h2>My goal is to connect people with beautiful solutions.</h2>
+        </Fade>
+        <Fade up>
+          <Bio>
+            I&#39;m a recent graduate of the Front End
+            Web Development bootcamp at Thinkful. I love how web development
+            combines quantitative and qualitative problem solving skills, which
+            is why I&#39;ve chosen it as a career path.
+            <br /><br />
+            I&#39;m excited by innovation,
+            and always driven to find solutions that are efficient and artistic.
+            <br /> <br />
+            <b>Front-end:</b> React, Redux, Redux-Form, Jquery, Css, Html, Styled-components
+            <br />
+            Back-end: Node, Express
+            <br />
+            Testing: Mocha, Chai, Enzyme, Jest
+            <br /> <br />
+            At some
+            point I drank the CrossFit kool-aid, so if my computer is off you can also find
+            me in a local gym racking up some burpees!
+            <br /><br />
+            Continue scrolling to see examples of my work.
+          </Bio>
+        </Fade>
       </Card>
     </Panel1>
     <hr />
     <Panel id={'work'}>
       <a id={'work'} />
       <Card>
-      <Fade left>
-        <ProjectTitle>
-          Piqnic
-        </ProjectTitle>
-        <Url
-      href={'https://diplomat-cat-50211.netlify.com/'}
-      target={'_blank'}>
-        www.piqnic.com
-      </Url>
-      </Fade>
-      <Fade up>
-      <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
-      <IconWrapper>
-        <Icon src={html} alt={'html logo'} />
-        <Icon src={css} alt={'css logo'} />
-        <Icon src={js} alt={'js logo'} />
-        <Icon src={jquery} alt={'jquery logo'} />
-      </IconWrapper>
-       <Description>
-        An app that helps you quickly plan a picnic.
-      </Description>
-      </Fade>
+        <Fade left>
+          <ProjectTitle>
+            Piqnic
+          </ProjectTitle>
+          <Url
+            href={'https://diplomat-cat-50211.netlify.com/'}
+            target={'_blank'}>
+            www.piqnic.com
+          </Url>
+        </Fade>
+        <Fade up>
+          <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
+          <IconWrapper>
+            <Icon src={html} alt={'html logo'} />
+            <Icon src={css} alt={'css logo'} />
+            <Icon src={js} alt={'js logo'} />
+            <Icon src={jquery} alt={'jquery logo'} />
+          </IconWrapper>
+          <Description>
+            An app that helps you quickly plan a picnic.
+          </Description>
+        </Fade>
       </Card>
     </Panel>
     <hr />
     <Panel>
       <Card>
-      <Fade left>
-      <ProjectTitle>
-        hai·koo
-      </ProjectTitle>
-      <Url
-        href={'https://young-springs-68250.herokuapp.com/'}
-        target={'_blank'}>
-        www.haikoo.com
-      </Url>
-      </Fade>
-      <Fade up>
-      <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
-      <IconWrapper>
-        <Icon src={html} alt={'html logo'} />
-        <Icon src={css} alt={'css logo'} />
-        <Icon src={js} alt={'js logo'} />
-        <Icon src={mocha} alt={'mocha logo'} />
-        <Icon src={chai} alt={'chai logo'} />
-        <Icon src={jquery} alt={'jquery logo'} />
-        <Icon src={express} alt={'express logo'} />
-        <Icon src={node} alt={'node logo'} />
-      </IconWrapper>
-      <Description>
-        An app that syllable-checks your haiku, and let&#39;s you post and vote on other haikus!
-      </Description>
-      </Fade>
+        <Fade left>
+          <ProjectTitle>
+            hai·koo
+          </ProjectTitle>
+          <Url
+            href={'https://young-springs-68250.herokuapp.com/'}
+            target={'_blank'}>
+            www.haikoo.com
+          </Url>
+        </Fade>
+        <Fade up>
+          <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
+          <IconWrapper>
+            <Icon src={html} alt={'html logo'} />
+            <Icon src={css} alt={'css logo'} />
+            <Icon src={js} alt={'js logo'} />
+            <Icon src={mocha} alt={'mocha logo'} />
+            <Icon src={chai} alt={'chai logo'} />
+            <Icon src={jquery} alt={'jquery logo'} />
+            <Icon src={express} alt={'express logo'} />
+            <Icon src={node} alt={'node logo'} />
+          </IconWrapper>
+          <Description>
+            An app that syllable-checks your haiku, and let&#39;s you post and vote on other haikus!
+          </Description>
+        </Fade>
       </Card>
     </Panel>
     <hr />
     <Panel>
-    <Card>
-    <Fade left>
-      <ProjectTitle>
-        Leev
-      </ProjectTitle>
-      <Url
-        href={'https://xenodochial-pare-c355a0.netlify.com/'}
-        target={'_blank'}>
-        www.leev.com
-      </Url>
-      </Fade>
-      <Fade up>
-      <Screenshot src={leevMac} alt={'screenshot of leev app'} />
-      <IconWrapper>
-        <Icon src={html} alt={'html logo'} />
-        <Icon src={styledcomponents} alt={'styled components logo'} />
-        <Icon src={js} alt={'js logo'} />
-        <Icon src={react} alt={'react logo'} />
-        <Icon src={redux} alt={'redux logo'} />
-        <Icon src={reduxForm} alt={'redux form logo'} />
-        <Icon src={mocha} alt={'mocha logo'} />
-        <Icon src={jest} alt={'jest logo'} />
-        <Icon src={chai} alt={'chai logo'} />
-        <Icon src={express} alt={'express logo'} />
-        <Icon src={node} alt={'node logo'} />
-      </IconWrapper>
-      <Description>
-        Leev uses a simple interface to help you track your leave data.
-      </Description>
-      </Fade>
+      <Card>
+        <Fade left>
+          <ProjectTitle>
+            Leev
+          </ProjectTitle>
+          <Url
+            href={'https://xenodochial-pare-c355a0.netlify.com/'}
+            target={'_blank'}>
+            www.leev.com
+          </Url>
+        </Fade>
+        <Fade up>
+          <Screenshot src={leevMac} alt={'screenshot of leev app'} />
+          <IconWrapper>
+            <Icon src={html} alt={'html logo'} />
+            <Icon src={styledcomponents} alt={'styled components logo'} />
+            <Icon src={js} alt={'js logo'} />
+            <Icon src={react} alt={'react logo'} />
+            <Icon src={redux} alt={'redux logo'} />
+            <Icon src={reduxForm} alt={'redux form logo'} />
+            <Icon src={mocha} alt={'mocha logo'} />
+            <Icon src={jest} alt={'jest logo'} />
+            <Icon src={chai} alt={'chai logo'} />
+            <Icon src={express} alt={'express logo'} />
+            <Icon src={node} alt={'node logo'} />
+          </IconWrapper>
+          <Description>
+            Leev uses a simple interface to help you track your leave data.
+          </Description>
+        </Fade>
       </Card>
     </Panel>
   </div>

@@ -10,6 +10,9 @@ const Headerdiv = styled.div`
   background: black;
   padding-top: 10px;
   padding-bottom: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
 `;
 
 const ContactFloater = styled.div`

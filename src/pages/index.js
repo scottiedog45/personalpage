@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 import chai from '../icons/chai.png'
 import css from '../icons/css.png'
@@ -42,6 +42,22 @@ const Button = styled.button`
   ${media.handheld`
     width: 30vw;
     `}
+  ${media.tablet`
+      font-size: 25px;
+      `}
+`;
+
+const PulsateText = keyframes`
+  0% {
+    color: #e94889;
+  }
+  50% {
+    color: black;
+  }
+
+  100% {
+    color: #e94889;
+  }
 `;
 
 const Panel = styled.div`
@@ -67,18 +83,10 @@ const ProjectTitle = styled.h1`
   margin-bottom: 0px;
   display: block;
   text-align: center;
+  font-size: 70px;
   ${media.handheld`
     font-size: 90px;
     `}
-`;
-
-const Panel2 = Panel.extend`
-`;
-
-const Panel3 = Panel.extend`
-`;
-
-const Panel4 = Panel.extend`
 `;
 
 const ButtonWrapper = styled.div`
@@ -95,20 +103,32 @@ const Subtitle = styled.p`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
+  line-height: 1.1;
+  ${media.tablet`
+    font-size: 35px;
+    line-height: 1.1;
+    `}
 `;
 
 const Bio = styled.p`
   font-size: 17px;
+  text-align: justify;
+  ${media.tablet`
+    font-size: 30px;
+    line-height: 1.3;
+    `}
 `;
 
 const Description = styled.p`
   margin-top: 50px;
   display: block;
   text-align: justify;
+  ${media.tablet`
+    font-size: 23px;
+    `}
 `;
 
 const Url = styled.a`
-  text-decoration: none;
   cursor: pointer;
   margin-left: 10px;
   color: #e94889;
@@ -116,16 +136,21 @@ const Url = styled.a`
 
 const UrlWrapper = styled.div`
   text-align: center;
+  margin-bottom: 10vh;
 `;
 
 const IconWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   bottom: 20px;
+  max-width: 90%;
+  ${media.handheld`
+    justify-content: space-around;
+    `}
 `;
 
 const Icon = styled.img`
@@ -150,7 +175,12 @@ const Name = styled.h1`
   font-family: 'Anton', sans-serif;
   margin-bottom: 0px;
   ${media.handheld`
-    font-size: 80px;
+    font-size: 50px;
+    `}
+  ${media.tablet`
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 67px;
     `}
 `;
 
@@ -177,18 +207,26 @@ const Welcome = styled.p`
   text-align: center;
   margin-top: 5vh;
   margin-bottom: 0px;
+  ${media.tablet`
+    font-size: 35px;
+    `}
+  ${media.handheld`
+    font-size: 30px;
+    `}
 `;
 
 const ScrollAnimation = styled.div`
   text-align: center;
+  animation: ${PulsateText} 1s infinite;
+  ${media.tablet`
+    font-size: 30px;
+    `}
 `;
 
 const Canvas = styled.canvas`
   height: 400px;
   width: 400px;
 `;
-
-
 
 const HeyThere = styled.h1`
   margin-bottom: 0px;
@@ -204,12 +242,14 @@ const Screenshot = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 80px;
+  margin-top: 23px;
+  max-width: 90%;
 `;
 
 const Copyright = styled.p`
   display: block;
   text-align: center;
+
 `;
 
 const IndexPage = () => (
@@ -256,9 +296,9 @@ const IndexPage = () => (
             <br /> <br />
             <b>Front-end:</b> React, Redux, Redux-Form, Jquery, Css, Html, Styled-components
             <br />
-            Back-end: Node, Express
+            <b>Back-end:</b> Node, Express
             <br />
-            Testing: Mocha, Chai, Enzyme, Jest
+            <b>Testing:</b> Mocha, Chai, Enzyme, Jest
             <br /> <br />
             At some
             point I drank the CrossFit kool-aid, so if my computer is off you can also find

@@ -10,5 +10,10 @@ export const media = {
     @media (min-width: 1366px) {
       ${ css(...args)}
     }
-    `
+  `,
+  tablet: (...args) => css`
+    @media (min-width: 768px) {
+      ${ css(...args)}
+    }
+  `
 }

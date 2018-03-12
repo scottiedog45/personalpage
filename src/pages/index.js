@@ -32,18 +32,22 @@ import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'r
 import Fade from 'react-reveal/Fade';
 
 const Button = styled.button`
+  font-size: 18px;
   color: white;
   background-color: #e94889;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   cursor: pointer;
-  width: 18vw;
-  height: 7vh;
+  width: 300px;
+  height: 70px;
   ${media.handheld`
-    width: 30vw;
+    width: 140px;
+    height: 50px;
+    font-size: 18px;
     `}
   ${media.tablet`
       font-size: 25px;
+      width: 200px;
       `}
 `;
 
@@ -72,7 +76,7 @@ const RadarPanel = Panel.extend`
 `;
 
 const TitlePanel = Panel.extend`
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const Panel1= Panel.extend`
@@ -176,10 +180,10 @@ const Name = styled.h1`
   margin-bottom: 0px;
   ${media.handheld`
     font-size: 50px;
-    `}
-  ${media.tablet`
     margin-top: 20px;
     margin-bottom: 20px;
+    `}
+  ${media.tablet`
     font-size: 67px;
     `}
 `;

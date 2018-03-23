@@ -294,6 +294,7 @@ const Screenshot = styled.img`
 const Copyright = styled.p`
   display: block;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 `;
 
 const ToTop = styled.button`
@@ -331,8 +332,8 @@ const IndexPage = () => (
       <Welcome>Welcome</Welcome>
       <Name>I&#39;m Scott O&#39;Toole.</Name>
       <Subtitle>I build engaging, fully responsive apps.
-        <br />
-        <MyLocation><MarkerDiv><FaMapMarker /></MarkerDiv><PlaceDiv>Atlanta, GA, USA.</PlaceDiv></MyLocation>
+        <br /><br />
+        <FaMapMarker />Atlanta, GA, USA.
       </Subtitle>
       <ScrollAnimation>
         scroll

@@ -27,48 +27,59 @@ import FontAwesome from 'react-fontawesome';
 
 import {media} from '../style-utils'
 
-import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
+import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMarker} from 'react-icons/lib/fa'
 
 import Fade from 'react-reveal/Fade';
 
+//styling small to large
+
 const Button = styled.button`
-  font-size: 18px;
-  color: white;
-  background-color: #e94889;
-  border: none;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  cursor: pointer;
-  width: 300px;
-  height: 70px;
   ${media.handheld`
     width: 140px;
     height: 50px;
     font-size: 18px;
+    background-color: #e94889;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
     `}
   ${media.tablet`
-      font-size: 25px;
-      width: 200px;
-      `}
+    font-size: 25px;
+    width: 200px;
+    `}
+  ${media.desktop`
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    `}
 `;
 
 const PulsateText = keyframes`
   0% {
-    color: #e94889;
+    color: #070729ed;
   }
   50% {
-    color: black;
+    color: inherit;
   }
-
   100% {
-    color: #e94889;
+    color: #070729ed;
   }
 `;
 
 const Panel = styled.div`
-  font-family: 'Raleway', sans-serif;
-  padding-top: 58px;
-  padding-bottom: 80px;
-  min-height: 100vh;
+  ${media.handheld`
+    font-family: 'Raleway', sans-serif;
+    padding-top: 58px;
+    padding-bottom: 79px;
+    min-height: 100vh;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    `}
+    ${media.desktop`
+      width: 70vw;
+      `}
 `;
 
 const RadarPanel = Panel.extend`
@@ -80,17 +91,23 @@ const TitlePanel = Panel.extend`
 `;
 
 const Panel1= Panel.extend`
-  padding-top: 2em;
+${media.desktop`
+  padding-top: 20vh;
+  `}
 `;
 
 const ProjectTitle = styled.h1`
-  margin-bottom: 0px;
-  display: block;
-  text-align: center;
-  font-size: 70px;
   ${media.handheld`
-    font-size: 90px;
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 0px;
+    display: block;
     `}
+  ${media.desktop`
+    text-align: center;
+    font-size: 65px;
+    `}
+
 `;
 
 const ButtonWrapper = styled.div`
@@ -101,41 +118,56 @@ const ButtonWrapper = styled.div`
 `;
 
 const Subtitle = styled.p`
+${media.handheld`
   text-align: center;
+  `}
+${media.tablet`
+  font-size: 35px;
+  line-height: 1.1;
+  `}
+${media.desktop`
   font-size: 23px;
-  width: 75%
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
   line-height: 1.1;
-  ${media.tablet`
-    font-size: 35px;
-    line-height: 1.1;
-    `}
+  `}
 `;
 
 const Bio = styled.p`
-  font-size: 17px;
-  text-align: justify;
+  ${media.handheld`
+    font-size: 17px;
+    text-align: center;
+    `}
   ${media.tablet`
     font-size: 30px;
     line-height: 1.3;
     `}
+  ${media.desktop`
+    font-size: 15px;
+    margin-bottom: 0px;
+  `}
 `;
 
 const Description = styled.p`
-  margin-top: 50px;
-  display: block;
-  text-align: justify;
+  ${media.handheld`
+    display: block;
+    text-align: justify;
+  `}
   ${media.tablet`
     font-size: 23px;
-    `}
+  `}
+  ${media.desktop`
+    font-size: 16px;
+  `}
 `;
 
 const Url = styled.a`
   cursor: pointer;
-  margin-left: 10px;
-  color: #e94889;
+  margin-left: 5px;
+  color: #f8f8ff;
+  margin-right: 5px;
 `;
 
 const UrlWrapper = styled.div`
@@ -144,6 +176,7 @@ const UrlWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
+  filter: grayscale(85%);
   display: flex;
   justify-content: space-between;
   margin-left: auto;
@@ -158,7 +191,7 @@ const IconWrapper = styled.div`
 `;
 
 const Icon = styled.img`
-  height: 47px;
+  height: 28px;
 `;
 
 const Footer = styled.div`
@@ -173,19 +206,20 @@ const FooterIcon = Icon.extend`
 `;
 
 const Name = styled.h1`
-  display: block;
+${media.handheld`
+  font-family: inherit;
   text-align: center;
-  font-size: 75px;
-  font-family: 'Anton', sans-serif;
-  margin-bottom: 0px;
-  ${media.handheld`
-    font-size: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    `}
-  ${media.tablet`
-    font-size: 67px;
-    `}
+  font-size: 29px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  `}
+${media.tablet`
+  font-size: 67px;
+  `}
+${media.desktop`
+  display: block;
+  font-size: 25px;
+  `}
 `;
 
 const PicniqScreenshot = styled.img`
@@ -209,7 +243,7 @@ const Phone = styled.img`
 
 const Welcome = styled.p`
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 29vh;
   margin-bottom: 0px;
   ${media.tablet`
     font-size: 35px;
@@ -220,12 +254,18 @@ const Welcome = styled.p`
 `;
 
 const ScrollAnimation = styled.div`
-  text-align: center;
-  animation: ${PulsateText} 1s infinite;
-  ${media.tablet`
-    font-size: 30px;
+  ${media.handheld`
+    font-size: 20px;
+    text-align: center;
+    animation: ${PulsateText} 2s infinite;
+    position: absolute;
+    bottom: 40px;
     `}
-`;
+  ${media.tablet`
+    `}
+  ${media.desktop`
+    `}
+  `;
 
 const Canvas = styled.canvas`
   height: 400px;
@@ -237,9 +277,10 @@ const HeyThere = styled.h1`
 `;
 
 const Card = styled.div`
+  color: #f8f8ff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 23px 16px;
-  background-color: white;
+  background-color: #01061f;
 `;
 
 const Screenshot = styled.img`
@@ -253,27 +294,46 @@ const Screenshot = styled.img`
 const Copyright = styled.p`
   display: block;
   text-align: center;
+`;
 
+const ToTop = styled.button`
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #f8f8ff;
+  background-color: #01061f;
+  border-radius: 50%;
+  border: none;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+`;
+
+const MyLocation = styled.p`
+  margin-top: 10px;
+`;
+
+const MarkerDiv = styled.div`
+  margin-top: -5px;
+  display: inline;
+`;
+
+const PlaceDiv = styled.div`
+  display: inline-block;
 `;
 
 const IndexPage = () => (
-  <div>
+  <div id={'top'}>
     <TitlePanel>
-      <Welcome>Welcome! My name is</Welcome>
-      <Name>Scott O&#39;Toole.</Name>
-      <Subtitle>I&#39;m your web developer. I build engaging and delightful apps.</Subtitle>
-      <ButtonWrapper>
-        <Scrollchor to='#work'>
-          <Button>
-            see my work
-          </Button>
-        </Scrollchor>
-        <a href={'mailto:scottiedog45@gmail.com'}>
-          <Button>
-            get in touch
-          </Button>
-        </a>
-      </ButtonWrapper>
+      <Welcome>Welcome</Welcome>
+      <Name>I&#39;m Scott O&#39;Toole.</Name>
+      <Subtitle>I build engaging, fully responsive apps.
+        <br />
+        <MyLocation><MarkerDiv><FaMapMarker /></MarkerDiv><PlaceDiv>Atlanta, GA, USA.</PlaceDiv></MyLocation>
+      </Subtitle>
       <ScrollAnimation>
         scroll
         <br />
@@ -284,38 +344,29 @@ const IndexPage = () => (
     <Panel1>
     <Card>
       <Fade left>
-        <HeyThere>Hey, there!</HeyThere>
+        <HeyThere>Hey there.</HeyThere>
         <br />
-        <h2>My goal is to connect people with beautiful solutions.</h2>
+        <h2>I connect people with beautiful and efficient solutions.</h2>
         </Fade>
         <Fade up>
           <Bio>
-            I&#39;m a recent graduate of the Full Stack
-            Web Development program at Thinkful. I love how web development
-            combines quantitative and qualitative problem solving skills, which
-            is why I&#39;ve chosen it as a career path.
-            <br /><br />
-            I&#39;m excited by innovation,
-            and always driven to find solutions that are efficient and artistic.
-            <br /> <br />
-            <b>Front-end:</b> React, Redux, Redux-Form, Jquery, Css, Html, Styled-components
+            My toolbox:<br />
+            <b>Front-end:</b> React, Redux, Redux-Form, JQuery, CSS, HTML, styled-components
             <br />
-            <b>Back-end:</b> Node, Express
+            <b>Back-end:</b> Node, Express, MongoDB
             <br />
             <b>Testing:</b> Mocha, Chai, Enzyme, Jest
+            <br />
+            <b>Version Control:</b> Git and Github.
             <br /> <br />
-            At some
-            point I drank the CrossFit kool-aid, so if my computer is off you can also find
-            me in a local gym racking up some burpees!
+            I am currently taking on new projects. Get in touch via email.
             <br /><br />
-            Continue scrolling to see examples of my work.
+            Continue scrolling to see my work.
           </Bio>
         </Fade>
       </Card>
     </Panel1>
-    <hr />
     <Panel id={'work'}>
-      <a id={'work'} />
       <Card>
         <Fade left>
           <ProjectTitle>
@@ -342,13 +393,15 @@ const IndexPage = () => (
             <Icon src={js} alt={'js logo'} />
             <Icon src={jquery} alt={'jquery logo'} />
           </IconWrapper>
+          <p>
+          Rundown:
+          </p>
           <Description>
            This project is combines the Google Maps API and the Open Weather API. My goal was to create an 'as simple as possible' user input to get the maximum response. One only has to enter their zipcode, and piqnic will find local parks in the area, and also display the weather for the next two days (perfect for weekend planning!).
           </Description>
         </Fade>
       </Card>
     </Panel>
-    <hr />
     <Panel>
       <Card>
         <Fade left>
@@ -380,13 +433,15 @@ const IndexPage = () => (
             <Icon src={express} alt={'express logo'} />
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
+          <p>
+          Rundown:
+          </p>
           <Description>
             This app uses the Words API to check syllable count of written line, and allows the user to submit a haiku if the syllables follow a 5-7-5 count. I was a bit naive in choosing this subject matter, as it&#39;s well documented that computers don&#39;t do a great job of quantifing language (ex. 'library' and 'extraordinary' are both listed with multiple syllable counts in the Oxford Dictionary). So, my original concept of 'app that counts syllables' narrowed to 'how many syllables does this API think this line has?' :). Upon approval, the haiku will be displayed. Users can see past haiku submissions, and upvote their favorites.
           </Description>
         </Fade>
       </Card>
     </Panel>
-    <hr />
     <Panel>
       <Card>
         <Fade left>
@@ -421,12 +476,18 @@ const IndexPage = () => (
             <Icon src={express} alt={'express logo'} />
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
+          <p>
+          Rundown:
+          </p>
           <Description>
             This app began as a conversation between myself and an overworked personnel manager. This manager didn&#39;t have an efficient solution to tracking leave data for for their group. I made this app to help. You can create services, members, and reasons for a members leave. All a member&#39;s leave data is then collected and displayed in their individual profile. You can create an account, or use the demo to preview the app =).
           </Description>
         </Fade>
       </Card>
     </Panel>
+    <Scrollchor to='#top'>
+      <ToTop>top</ToTop>
+    </Scrollchor>
     <Copyright>&copy; Scott O&#39;Toole</Copyright>
   </div>
 )

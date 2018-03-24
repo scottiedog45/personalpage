@@ -307,7 +307,7 @@ const Copyright = styled.p`
 
 const ToTop = styled.button`
   font-family: 'Raleway', sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
   color: #f8f8ff;
   background-color: #01061f;

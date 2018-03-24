@@ -243,7 +243,7 @@ const Phone = styled.img`
 
 const Welcome = styled.p`
   text-align: center;
-  margin-top: 29vh;
+  margin-top: 15vh;
   margin-bottom: 0px;
   ${media.tablet`
     font-size: 35px;
@@ -255,6 +255,7 @@ const Welcome = styled.p`
 
 const ScrollAnimation = styled.div`
   ${media.handheld`
+    margin-left: 18px;
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
@@ -281,6 +282,12 @@ const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 23px 16px;
   background-color: #01061f;
+  border-radius: 8px;
+`;
+
+const Card1 = Card.extend`
+  background-color: unset
+  box-shadow: unset;
 `;
 
 const Screenshot = styled.img`
@@ -289,6 +296,7 @@ const Screenshot = styled.img`
   margin-right: auto;
   margin-top: 23px;
   max-width: 90%;
+  border-radius: 8px;
 `;
 
 const Copyright = styled.p`
@@ -326,10 +334,50 @@ const PlaceDiv = styled.div`
   display: inline-block;
 `;
 
-const IndexPage = () => (
+const Scroller = styled.div`
+  position: sticky;
+  background-color: inherit;
+  width: 10px;
+  height: 80vh;
+  float: right;
+  right: 0px;
+  top: 30px;
+  margin: 0px;
+  padding: 0px;
+`;
+
+const InnerScroller = styled.div`
+  height: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+`;
+
+class IndexPage extends React.Component  {
+
+  componentDidMount() {
+    window.addEventListener('scroll', ()=> {
+      let fullHeight = document.body.scrollHeight;
+      let positionOfTopOfWindow = window.scrollY;
+      let heightOfWindow = window.innerHeight;
+      console.log(fullHeight);
+      console.log(positionOfTopOfWindow);
+      console.log(heightOfWindow);
+      document.getElementById('innerScroller').style.height =  (((((positionOfTopOfWindow+heightOfWindow)*(positionOfTopOfWindow/(fullHeight-heightOfWindow)))/fullHeight)*100).toFixed(2) + '%');
+    })
+  }
+
+  render() {
+
+    return (
   <div id={'top'}>
+  <Scroller>
+    <InnerScroller id={'innerScroller'}/>
+  </Scroller>
     <TitlePanel>
       <Welcome>Welcome</Welcome>
+
       <Name>I&#39;m Scott O&#39;Toole.</Name>
       <Subtitle>I build engaging, fully responsive apps.
         <br /><br />
@@ -343,7 +391,7 @@ const IndexPage = () => (
       </ScrollAnimation>
     </TitlePanel>
     <Panel1>
-    <Card>
+    <Card1>
       <Fade left>
         <HeyThere>Hey there.</HeyThere>
         <br />
@@ -365,7 +413,7 @@ const IndexPage = () => (
             Continue scrolling to see my work.
           </Bio>
         </Fade>
-      </Card>
+      </Card1>
     </Panel1>
     <Panel id={'work'}>
       <Card>
@@ -492,5 +540,7 @@ const IndexPage = () => (
     <Copyright>&copy; Scott O&#39;Toole</Copyright>
   </div>
 )
+}
+}
 
 export default IndexPage

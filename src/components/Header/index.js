@@ -21,7 +21,7 @@ const Headerdiv = styled.div`
 const ContactFloater = styled.div`
   font-size: 40px;
   color: #f8f8ff;
-  margin-top: 34vh;
+  margin-top: 21vh;
 `;
 
 const ContactLink = styled.a`

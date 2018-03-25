@@ -57,13 +57,13 @@ const Button = styled.button`
 
 const PulsateText = keyframes`
   0% {
-    color: #070729ed;
+    color: #191938;
   }
   50% {
     color: inherit;
   }
   100% {
-    color: #070729ed;
+    color: #191938;
   }
 `;
 
@@ -119,6 +119,7 @@ const ButtonWrapper = styled.div`
 
 const Subtitle = styled.p`
 ${media.handheld`
+  margin-top:50px;
   text-align: center;
   `}
 ${media.tablet`
@@ -153,7 +154,10 @@ const Bio = styled.p`
 const Description = styled.p`
   ${media.handheld`
     display: block;
-    text-align: justify;
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   `}
   ${media.tablet`
     font-size: 23px;
@@ -166,28 +170,35 @@ const Description = styled.p`
 const Url = styled.a`
   cursor: pointer;
   margin-left: 5px;
-  color: #f8f8ff;
+  color: cyan;
   margin-right: 5px;
 `;
 
 const UrlWrapper = styled.div`
   text-align: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 `;
 
 const IconWrapper = styled.div`
-  filter: grayscale(85%);
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  bottom: 20px;
-  max-width: 90%;
   ${media.handheld`
     justify-content: space-around;
+    filter: grayscale(85%);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 20px;
+    max-width: 90%;
     `}
+    ${media.tablet`
+    justify-content: space-between;
+    max-width: 75%;
+      `}
+    ${media.desktop`
+    justify-content: space-between;
+    max-width: 60%;
+      `}
 `;
 
 const Icon = styled.img`
@@ -196,6 +207,7 @@ const Icon = styled.img`
 
 const Footer = styled.div`
   text-align: center;
+  color: cyan;
 `;
 
 const FooterIcon = Icon.extend`
@@ -207,18 +219,20 @@ const FooterIcon = Icon.extend`
 
 const Name = styled.h1`
 ${media.handheld`
+  color: cyan;
+  font-weight: 100;
   font-family: inherit;
   text-align: center;
   font-size: 29px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   `}
 ${media.tablet`
-  font-size: 67px;
+  font-size: 40px;
   `}
 ${media.desktop`
   display: block;
-  font-size: 25px;
+  font-size: 80px;
   `}
 `;
 
@@ -274,14 +288,13 @@ const Canvas = styled.canvas`
 `;
 
 const HeyThere = styled.h1`
+  color: cyan;
   margin-bottom: 0px;
 `;
 
 const Card = styled.div`
   color: #f8f8ff;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 23px 16px;
-  background-color: #01061f;
   border-radius: 8px;
 `;
 
@@ -291,12 +304,20 @@ const Card1 = Card.extend`
 `;
 
 const Screenshot = styled.img`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 23px;
-  max-width: 90%;
-  border-radius: 8px;
+  ${media.handheld`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 23px;
+    max-width: 90%;
+    border-radius: 8px;
+    `}
+  ${media.tablet`
+    max-width: 75%;
+    `}
+  ${media.desktop`
+    max-width: 60%;
+    `}
 `;
 
 const Copyright = styled.p`
@@ -349,9 +370,28 @@ const Scroller = styled.div`
 const InnerScroller = styled.div`
   height: 0;
   width: 100%;
-  background-color: white;
+  background-color: cyan;
   margin: 0px;
   padding: 0px;
+`;
+
+const Tool = styled.div`
+  display: inline;
+  border: 1px solid white;
+`;
+
+const TinyMenuWrapper = styled.div`
+  font-size: 13px;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const TinyLink = styled.a`
+  cursor: pointer;
+  &:hover{
+    text-decoration: line-through;
+  }
 `;
 
 class IndexPage extends React.Component  {
@@ -361,9 +401,6 @@ class IndexPage extends React.Component  {
       let fullHeight = document.body.scrollHeight;
       let positionOfTopOfWindow = window.scrollY;
       let heightOfWindow = window.innerHeight;
-      console.log(fullHeight);
-      console.log(positionOfTopOfWindow);
-      console.log(heightOfWindow);
       document.getElementById('innerScroller').style.height =  (((((positionOfTopOfWindow+heightOfWindow)*(positionOfTopOfWindow/(fullHeight-heightOfWindow)))/fullHeight)*100).toFixed(2) + '%');
     })
   }
@@ -377,9 +414,9 @@ class IndexPage extends React.Component  {
   </Scroller>
     <TitlePanel>
       <Welcome>Welcome</Welcome>
-
       <Name>I&#39;m Scott O&#39;Toole.</Name>
-      <Subtitle>I build engaging, fully responsive apps.
+      <TinyMenuWrapper><TinyLink>about</TinyLink><TinyLink>work</TinyLink><TinyLink>contact</TinyLink></TinyMenuWrapper>
+      <Subtitle>I build engaging, fully responsive sites.
         <br /><br />
         <FaMapMarker />Atlanta, GA, USA.
       </Subtitle>
@@ -393,14 +430,18 @@ class IndexPage extends React.Component  {
     <Panel1>
     <Card1>
       <Fade left>
+      <h4>about</h4>
+      <hr />
         <HeyThere>Hey there.</HeyThere>
         <br />
         <h2>I connect people with beautiful and efficient solutions.</h2>
         </Fade>
         <Fade up>
           <Bio>
+            I like to do what's best for the project. Mobile-first? Test driven development? Let's do it.
+            <br /><br />
             My toolbox:<br />
-            <b>Front-end:</b> React, Redux, Redux-Form, JQuery, CSS, HTML, styled-components
+            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components
             <br />
             <b>Back-end:</b> Node, Express, MongoDB
             <br />
@@ -418,6 +459,7 @@ class IndexPage extends React.Component  {
     <Panel id={'work'}>
       <Card>
         <Fade left>
+        <div>
           <ProjectTitle>
             Piqnic
           </ProjectTitle>
@@ -433,6 +475,7 @@ class IndexPage extends React.Component  {
             Github Repo
           </Url>
           </UrlWrapper>
+          </div>
         </Fade>
         <Fade up>
           <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
@@ -442,11 +485,8 @@ class IndexPage extends React.Component  {
             <Icon src={js} alt={'js logo'} />
             <Icon src={jquery} alt={'jquery logo'} />
           </IconWrapper>
-          <p>
-          Rundown:
-          </p>
           <Description>
-           This project is combines the Google Maps API and the Open Weather API. My goal was to create an 'as simple as possible' user input to get the maximum response. One only has to enter their zipcode, and piqnic will find local parks in the area, and also display the weather for the next two days (perfect for weekend planning!).
+           Google Maps API + OpenWeather API + a dash of jQuery = piqnic. Hungry yet?
           </Description>
         </Fade>
       </Card>
@@ -482,11 +522,8 @@ class IndexPage extends React.Component  {
             <Icon src={express} alt={'express logo'} />
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
-          <p>
-          Rundown:
-          </p>
           <Description>
-            This app uses the Words API to check syllable count of written line, and allows the user to submit a haiku if the syllables follow a 5-7-5 count. I was a bit naive in choosing this subject matter, as it&#39;s well documented that computers don&#39;t do a great job of quantifing language (ex. 'library' and 'extraordinary' are both listed with multiple syllable counts in the Oxford Dictionary). So, my original concept of 'app that counts syllables' narrowed to 'how many syllables does this API think this line has?' :). Upon approval, the haiku will be displayed. Users can see past haiku submissions, and upvote their favorites.
+            I tried to count syllables of English words with the Words API. Turns out it's almost possible.
           </Description>
         </Fade>
       </Card>
@@ -525,11 +562,8 @@ class IndexPage extends React.Component  {
             <Icon src={express} alt={'express logo'} />
             <Icon src={node} alt={'node logo'} />
           </IconWrapper>
-          <p>
-          Rundown:
-          </p>
           <Description>
-            This app began as a conversation between myself and an overworked personnel manager. This manager didn&#39;t have an efficient solution to tracking leave data for for their group. I made this app to help. You can create services, members, and reasons for a members leave. All a member&#39;s leave data is then collected and displayed in their individual profile. You can create an account, or use the demo to preview the app =).
+            This app began as a conversation between myself and an overworked personnel manager. Use the demo login to preview the app.
           </Description>
         </Fade>
       </Card>
@@ -537,7 +571,9 @@ class IndexPage extends React.Component  {
     <Scrollchor to='#top'>
       <ToTop>top</ToTop>
     </Scrollchor>
+    <Fade left>
     <Copyright>&copy; Scott O&#39;Toole</Copyright>
+    </Fade>
   </div>
 )
 }

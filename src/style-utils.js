@@ -2,7 +2,7 @@ import {css} from 'styled-components';
 
 export const media = {
   handheld: (...args) => css`
-    @media only screen and (min-width: 320px) {
+    @media only screen and (min-width: 0px) {
       ${ css(...args)}
     }
   `,

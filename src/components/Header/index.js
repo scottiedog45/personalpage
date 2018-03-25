@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import resume from '../../contactIcons/resume.pdf'
 
 import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
 
@@ -26,6 +27,9 @@ const ContactFloater = styled.div`
 
 const ContactLink = styled.a`
   color: inherit;
+  &:hover{
+    color: cyan;
+  }
 `;
 
 const ContactLinkWrapper= styled.div`
@@ -39,26 +43,75 @@ const ContactIcon = styled.img`
   margin-left: 20px;
 `;
 
+const ResumeLinkWrapper = ContactLinkWrapper.extend`
+  transform: rotate(270deg);
+  transform-origin: left top 0;
+  font-size: 15px;
+  margin-left: 7px;
+`;
+
+const ResumeLink = styled.a`
+  color: #f8f8ff;
+  word-wrap: normal;
+  text-decoration: none;
+  &:hover{
+    color: cyan;
+  }
+  letter-spacing: 5px;
+`;
+
+const FirstContactLinkWrapper = ContactLinkWrapper.extend`
+  margin-top: 8px;
+`;
+
+const BlogLinkWrapper = ContactLinkWrapper.extend`
+transform: rotate(270deg);
+transform-origin: left top 0;
+font-size: 15px;
+margin-left: 7px;
+margin-top: 58px;
+`;
+
+const BlogLink = styled.a`
+color: #f8f8ff;
+word-wrap: normal;
+text-decoration: none;
+&:hover{
+  color: cyan;
+}
+letter-spacing: 5px;
+`;
+
 const Header = () => (
   <Headerdiv>
-  <ContactFloater>
-  <ContactLinkWrapper>
-    <ContactLink
-      href={'mailto:scottiedog45@gmail.com'}>
-      <FaEnvelope />
-    </ContactLink>
-    </ContactLinkWrapper>
-    <ContactLinkWrapper>
-    <ContactLink href={'https://github.com/scottiedog45'}target={'_blank'}>
-      <FaGithubSquare />
-    </ContactLink>
-    </ContactLinkWrapper>
-    <ContactLinkWrapper>
-    <ContactLink href={'https://www.linkedin.com/in/scott-o-toole-8b35b01b/'}target={'_blank'}>
-      <FaLinkedinSquare />
-    </ContactLink>
-    </ContactLinkWrapper>
-  </ContactFloater>
+    <ContactFloater>
+      <ResumeLinkWrapper>
+        <ResumeLink href={resume} target='_blank'>
+          résumé
+        </ResumeLink>
+      </ResumeLinkWrapper>
+      <BlogLinkWrapper>
+      <BlogLink href={'wordpress.com'} target = '_blank'>
+        blog
+      </BlogLink>
+      </BlogLinkWrapper>
+    <FirstContactLinkWrapper>
+      <ContactLink
+        href={'mailto:scottiedog45@gmail.com'} >
+        <FaEnvelope />
+      </ContactLink>
+      </FirstContactLinkWrapper>
+      <ContactLinkWrapper>
+        <ContactLink href={'https://github.com/scottiedog45'}target={'_blank'}>
+          <FaGithubSquare />
+        </ContactLink>
+      </ContactLinkWrapper>
+      <ContactLinkWrapper>
+        <ContactLink href={'https://www.linkedin.com/in/scott-o-toole-8b35b01b/'}target={'_blank'}>
+          <FaLinkedinSquare />
+        </ContactLink>
+      </ContactLinkWrapper>
+    </ContactFloater>
   </Headerdiv>
 )
 

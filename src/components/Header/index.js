@@ -90,11 +90,6 @@ const Header = () => (
           résumé
         </ResumeLink>
       </ResumeLinkWrapper>
-      <BlogLinkWrapper>
-      <BlogLink href={'wordpress.com'} target = '_blank'>
-        blog
-      </BlogLink>
-      </BlogLinkWrapper>
     <FirstContactLinkWrapper>
       <ContactLink
         href={'mailto:scottiedog45@gmail.com'} >

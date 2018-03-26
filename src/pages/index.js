@@ -70,9 +70,6 @@ const PulsateText = keyframes`
 const Panel = styled.div`
   ${media.handheld`
     font-family: 'Raleway', sans-serif;
-    padding-top: 58px;
-    padding-bottom: 79px;
-    min-height: 100vh;
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
@@ -88,11 +85,14 @@ const RadarPanel = Panel.extend`
 
 const TitlePanel = Panel.extend`
   min-height: 100vh;
+  padding-top: 10vh;
 `;
 
 const Panel1= Panel.extend`
 ${media.desktop`
-  padding-top: 20vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  min-height: 100vh;
   `}
 `;
 
@@ -142,11 +142,11 @@ const Bio = styled.p`
     text-align: center;
     `}
   ${media.tablet`
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.3;
     `}
   ${media.desktop`
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 0px;
   `}
 `;
@@ -324,6 +324,7 @@ const Copyright = styled.p`
   display: block;
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  margin-top: 10vh;
 `;
 
 const ToTop = styled.button`
@@ -385,14 +386,60 @@ const TinyMenuWrapper = styled.div`
   letter-spacing: 3px;
   display: flex;
   justify-content: space-evenly;
+  text-decoration: none;
 `;
 
 const TinyLink = styled.a`
   cursor: pointer;
+  text-decoration: none;
   &:hover{
     text-decoration: line-through;
   }
+  &:visited{
+    color: #f8f8ff;
+    text-decoration: none;
+  }
 `;
+
+const Hr = styled.hr`
+  ${media.handheld`
+background-color: #f8f8ff;
+height: 2px;
+    `}
+
+`;
+
+const ContactPanel = Panel.extend`
+${media.handheld`
+    padding-top: 5vh;
+    min-height: 0;
+  `}
+${media.tablet`
+    min-height: 0;
+  `}
+${media.desktop`
+    min-height: 0;
+  `}
+`;
+
+const EmailLink = TinyLink.extend`
+  ${media.handheld`
+    color: #f8f8ff;
+  font-size: 16px;
+  letter-spaceing: 3px;
+    `}
+    ${media.tablet`
+      font-size: 22px;
+      `}
+  ${media.desktop`
+    font-size: 28px;
+    `}
+`;
+
+const ContactPanelContent = styled.div`
+  text-align: center;
+`;
+
 
 class IndexPage extends React.Component  {
 
@@ -415,8 +462,8 @@ class IndexPage extends React.Component  {
     <TitlePanel>
       <Welcome>Welcome</Welcome>
       <Name>I&#39;m Scott O&#39;Toole.</Name>
-      <TinyMenuWrapper><TinyLink>about</TinyLink><TinyLink>work</TinyLink><TinyLink>contact</TinyLink></TinyMenuWrapper>
-      <Subtitle>I build engaging, fully responsive sites.
+      <TinyMenuWrapper><Scrollchor to='#about' animate={{ offset: 0, duration: 800}}>about</Scrollchor><Scrollchor to='#work'>work</Scrollchor><Scrollchor to='#contact'>contact</Scrollchor></TinyMenuWrapper>
+      <Subtitle>I build websites and apps.
         <br /><br />
         <FaMapMarker />Atlanta, GA, USA.
       </Subtitle>
@@ -430,8 +477,8 @@ class IndexPage extends React.Component  {
     <Panel1>
     <Card1>
       <Fade left>
-      <h4>about</h4>
-      <hr />
+      <h4 id={'about'}>about</h4>
+      <Hr />
         <HeyThere>Hey there.</HeyThere>
         <br />
         <h2>I connect people with beautiful and efficient solutions.</h2>
@@ -459,9 +506,11 @@ class IndexPage extends React.Component  {
     <Panel id={'work'}>
       <Card>
         <Fade left>
+        <h4>work</h4>
+        <Hr />
         <div>
           <ProjectTitle>
-            Piqnic
+            piqnic
           </ProjectTitle>
           <UrlWrapper>
           <Url
@@ -568,12 +617,20 @@ class IndexPage extends React.Component  {
         </Fade>
       </Card>
     </Panel>
+    <ContactPanel id={'contact'}>
+      <Fade left>
+      <h4>contact</h4>
+      <ContactPanelContent>
+      <Hr />
+      <p>like what you see? let's work together</p>
+      <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
+      </ContactPanelContent>
+      </Fade>
+    </ContactPanel>
     <Scrollchor to='#top'>
       <ToTop>top</ToTop>
     </Scrollchor>
-    <Fade left>
     <Copyright>&copy; Scott O&#39;Toole</Copyright>
-    </Fade>
   </div>
 )
 }

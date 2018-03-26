@@ -475,9 +475,9 @@ class IndexPage extends React.Component  {
       </ScrollAnimation>
     </TitlePanel>
     <Panel1>
-    <Card1>
+    <Card1 id={'about'}>
       <Fade left>
-      <h4 id={'about'}>about</h4>
+      <h4>about</h4>
       <Hr />
         <HeyThere>Hey there.</HeyThere>
         <br />

@@ -31,6 +31,8 @@ import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMa
 
 import Fade from 'react-reveal/Fade';
 
+import selfie from '../selfie/Head.png'
+
 //styling small to large
 
 const Button = styled.button`
@@ -89,6 +91,9 @@ const TitlePanel = Panel.extend`
 `;
 
 const Panel1= Panel.extend`
+${media.tablet`
+  min-height: 60vh;
+  `}
 ${media.desktop`
   padding-top: 10vh;
   padding-bottom: 10vh;
@@ -138,6 +143,7 @@ ${media.desktop`
 
 const Bio = styled.p`
   ${media.handheld`
+    padding-top: 47px;
     font-size: 17px;
     text-align: center;
     `}
@@ -440,6 +446,27 @@ const ContactPanelContent = styled.div`
   text-align: center;
 `;
 
+const Selfie = styled.img`
+  ${media.handheld`
+    height: 190px;
+    float: none;
+    margin-left: 20px;
+    `}
+  ${media.tablet`
+    float: right;
+    `}
+`;
+
+const SelfieDiv = styled.div`
+  ${media.handheld`
+    text-align: center;
+    `}
+  ${media.tablet`
+    text-align: none;
+    `}
+`
+
+
 
 class IndexPage extends React.Component  {
 
@@ -479,6 +506,7 @@ class IndexPage extends React.Component  {
       <Fade left>
       <h4>about</h4>
       <Hr />
+      <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
         <br />
         <h2>I connect people with beautiful and efficient solutions.</h2>

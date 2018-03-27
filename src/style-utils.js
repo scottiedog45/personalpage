@@ -7,7 +7,7 @@ export const media = {
     }
   `,
   desktop: (...args) => css`
-    @media (min-width: 800px) {
+    @media (min-width: 1025px) {
       ${ css(...args)}
     }
   `,

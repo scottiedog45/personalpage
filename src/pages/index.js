@@ -128,7 +128,7 @@ ${media.handheld`
   text-align: center;
   `}
 ${media.tablet`
-  font-size: 35px;
+  font-size: 23px;
   line-height: 1.1;
   `}
 ${media.desktop`
@@ -143,11 +143,12 @@ ${media.desktop`
 
 const Bio = styled.p`
   ${media.handheld`
-    padding-top: 47px;
+    padding-top: 20px;
     font-size: 17px;
     text-align: center;
     `}
   ${media.tablet`
+    padding-top: 47px;
     font-size: 20px;
     line-height: 1.3;
     `}

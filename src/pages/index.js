@@ -517,15 +517,16 @@ class IndexPage extends React.Component  {
             I like to do what's best for the project. Mobile-first? Test driven development? Let's do it.
             <br /><br />
             My toolbox:<br />
-            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components
+            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby
             <br />
-            <b>Back-end:</b> Node, Express, MongoDB
+            <b>Back-end:</b> Node, Express, MongoDB, Heroku
             <br />
             <b>Testing:</b> Mocha, Chai, Enzyme, Jest
             <br />
-            <b>Version Control:</b> Git and Github.
+            <b>Version Control:</b> Git and Github
             <br /> <br />
-            I am currently taking on new projects. Get in touch via email.
+            I am currently taking on new projects. Get in touch via my email:<br />
+            <EmailLink href={'mailto:scottiedog45@gmail.com'}>scottiedog45@gmail.com</EmailLink>
             <br /><br />
             Continue scrolling to see my work.
           </Bio>

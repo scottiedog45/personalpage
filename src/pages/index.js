@@ -251,25 +251,6 @@ ${media.desktop`
   `}
 `;
 
-const PicniqScreenshot = styled.img`
-  height: 300px;
-`;
-
-const Imac = styled.img`
-  height: 300px
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const Tablet = styled.img`
-  height: 200px;
-`;
-
-const Phone = styled.img`
-  height: 250px;
-`;
-
 const ScrollAnimation = styled.div`
   ${media.handheld`
     margin-left: auto;
@@ -285,11 +266,6 @@ const ScrollAnimation = styled.div`
   ${media.desktop`
     `}
   `;
-
-const Canvas = styled.canvas`
-  height: 400px;
-  width: 400px;
-`;
 
 const HeyThere = styled.h1`
   color: cyan;
@@ -317,11 +293,13 @@ const Screenshot = styled.img`
     border-radius: 8px;
     `}
   ${media.tablet`
-    max-width: 75%;
+    width: 75%;
     `}
   ${media.desktop`
-    max-width: 75%;
     `}
+    ${media.extraBig`
+
+      `}
 `;
 
 const Copyright = styled.p`

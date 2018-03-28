@@ -136,7 +136,7 @@ ${media.tablet`
   `}
 ${media.desktop`
   font-size: 23px;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0px;
@@ -320,7 +320,7 @@ const Screenshot = styled.img`
     max-width: 75%;
     `}
   ${media.desktop`
-    max-width: 60%;
+    max-width: 75%;
     `}
 `;
 
@@ -456,6 +456,10 @@ const Selfie = styled.img`
     `}
   ${media.desktop`
     margin-top: 20vh;
+    `}
+  ${media.extraBig`
+    margin-top: 4vh;
+    height: 500px;
     `}
 `;
 

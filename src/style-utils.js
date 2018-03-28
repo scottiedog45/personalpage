@@ -15,5 +15,10 @@ export const media = {
     @media only screen and (min-width: 768px) {
       ${ css(...args)}
     }
+  `,
+  extraBig: (...args) => css`
+    @media only screen and (min-width: 1500px) {
+      ${ css(...args)}
+    }
   `
 }

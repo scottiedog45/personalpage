@@ -72,12 +72,12 @@ const PulsateText = keyframes`
 const Panel = styled.div`
   ${media.handheld`
     font-family: 'Raleway', sans-serif;
-    width: 80vw;
+    width: 88vw;
     margin-left: auto;
     margin-right: auto;
     `}
     ${media.desktop`
-      width: 70vw;
+
       `}
 `;
 
@@ -91,6 +91,9 @@ const TitlePanel = Panel.extend`
 `;
 
 const Panel1= Panel.extend`
+${media.handheld`
+  width: 88vw;
+  `}
 ${media.tablet`
   min-height: 60vh;
   `}
@@ -226,12 +229,12 @@ const FooterIcon = Icon.extend`
 
 const Name = styled.h1`
 ${media.handheld`
+  margin-top: 18vh
   color: cyan;
   font-weight: 100;
   font-family: inherit;
   text-align: center;
   font-size: 29px;
-  margin-top: 50px;
   margin-bottom: 10px;
   `}
 ${media.tablet`
@@ -262,25 +265,14 @@ const Phone = styled.img`
   height: 250px;
 `;
 
-const Welcome = styled.p`
-  text-align: center;
-  margin-top: 15vh;
-  margin-bottom: 0px;
-  ${media.tablet`
-    font-size: 35px;
-    `}
-  ${media.handheld`
-    font-size: 30px;
-    `}
-`;
-
 const ScrollAnimation = styled.div`
   ${media.handheld`
-    margin-left: 18px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
-    position: absolute;
+    margin-top: 29vh
     bottom: 40px;
     `}
   ${media.tablet`
@@ -488,7 +480,6 @@ class IndexPage extends React.Component  {
     <InnerScroller id={'innerScroller'}/>
   </Scroller>
     <TitlePanel>
-      <Welcome>Welcome</Welcome>
       <Name>I&#39;m Scott O&#39;Toole.</Name>
       <TinyMenuWrapper><Scrollchor to='#about' animate={{ offset: 0, duration: 800}}>about</Scrollchor><Scrollchor to='#work'>work</Scrollchor><Scrollchor to='#contact'>contact</Scrollchor></TinyMenuWrapper>
       <Subtitle>I build websites and apps.
@@ -510,11 +501,10 @@ class IndexPage extends React.Component  {
       <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
         <br />
-        <h2>I connect people with beautiful and efficient solutions.</h2>
         </Fade>
         <Fade up>
           <Bio>
-            I like to do what's best for the project. Mobile-first? Test driven development? Let's do it.
+            I like to do what's best for the project. I'm a fan of mobile-first, test-driven development.
             <br /><br />
             My toolbox:<br />
             <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby

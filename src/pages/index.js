@@ -148,7 +148,6 @@ const Bio = styled.p`
   ${media.handheld`
     padding-top: 20px;
     font-size: 17px;
-    text-align: center;
     `}
   ${media.tablet`
     padding-top: 47px;
@@ -212,7 +211,13 @@ const IconWrapper = styled.div`
 `;
 
 const Icon = styled.img`
-  height: 28px;
+  ${media.handheld`
+    height: 28px;
+    `}
+  ${media.tablet``}
+  ${media.desktop`
+    height: 40px;
+    `}
 `;
 
 const Footer = styled.div`
@@ -441,12 +446,16 @@ const ContactPanelContent = styled.div`
 
 const Selfie = styled.img`
   ${media.handheld`
-    height: 190px;
+    height: 250px;
     float: none;
     margin-left: 20px;
     `}
   ${media.tablet`
+    margin-top: 10vh;
     float: right;
+    `}
+  ${media.desktop`
+    margin-top: 20vh;
     `}
 `;
 
@@ -458,7 +467,17 @@ const SelfieDiv = styled.div`
     text-align: none;
     `}
 `
+const BioEmail = styled.span`
+  ${media.handheld`
+    margin-top: 5vh;
+    display: block;
+    `}
+`;
 
+const StickyHeaderDiv = styled.div`
+  position: sticky;
+  top: 0;
+`;
 
 
 class IndexPage extends React.Component  {
@@ -496,8 +515,12 @@ class IndexPage extends React.Component  {
     <Panel1>
     <Card1 id={'about'}>
       <Fade left>
+      <div>
+      <StickyHeaderDiv>
       <h4>about</h4>
       <Hr />
+      </StickyHeaderDiv>
+      </div>
       <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
         <br />
@@ -514,10 +537,11 @@ class IndexPage extends React.Component  {
             <b>Testing:</b> Mocha, Chai, Enzyme, Jest
             <br />
             <b>Version Control:</b> Git and Github
-            <br /> <br />
+            <BioEmail>
             I am currently taking on new projects. Get in touch via my email:<br />
             <EmailLink href={'mailto:scottiedog45@gmail.com'}>scottiedog45@gmail.com</EmailLink>
-            <br /><br />
+            </BioEmail>
+            <br />
             Continue scrolling to see my work.
           </Bio>
         </Fade>

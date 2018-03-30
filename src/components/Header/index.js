@@ -32,9 +32,9 @@ const HeaderWrapper = styled.div`
 const Header = () => (
   <HeaderWrapper>
   <TinyMenuWrapper>
-  <Scrollchor to='#about' animate={{ offset: 0, duration: 800}}>about</Scrollchor>
-  <Scrollchor to='#work'>work</Scrollchor>
-  <Scrollchor to='#contact'>contact</Scrollchor>
+  <Scrollchor to='#about' animate={{offset: -20, duration: 800}}>about</Scrollchor>
+  <Scrollchor to='#work' animate={{offset: -20, duration: 800}}>work</Scrollchor>
+  <Scrollchor to='#contact' animate={{offset: -20, duration: 800}}>contact</Scrollchor>
   </TinyMenuWrapper>
 
   </HeaderWrapper>

@@ -156,7 +156,7 @@ const Bio = styled.p`
     `}
   ${media.tablet`
     padding-top: 47px;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.3;
     `}
   ${media.desktop`
@@ -169,9 +169,10 @@ const Description = styled.p`
   ${media.handheld`
     text-align: center;
     grid-area: description;
+    font-size: 16px;
   `}
   ${media.tablet`
-    font-size: 23px;
+    font-size: 16px;
   `}
   ${media.desktop`
     font-size: 16px;
@@ -282,10 +283,7 @@ const Screenshot = styled.img`
   ${media.tablet`
     `}
   ${media.desktop`
-    &:hover{
-      opacity: 0.5;
-    }
-    `}
+
     ${media.extraBig`
 
       `}
@@ -633,7 +631,6 @@ class IndexPage extends React.Component  {
             </ProjectPanel>
       </WorkPanel>
       <ContactPanel id={'contact'}>
-        <Fade left>
         <PanelHeader>contact</PanelHeader>
         <ContactPanelContent>
         <Hr />
@@ -641,7 +638,6 @@ class IndexPage extends React.Component  {
         <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
           <Footer />
         </ContactPanelContent>
-        </Fade>
         <Copyright>&copy; Scott O&#39;Toole</Copyright>
       </ContactPanel>
   </Container>

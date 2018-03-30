@@ -23,7 +23,6 @@ const TemplateWrapper = ({ children }) => (
         color: '#f8f8ff',
         margin: '0 auto',
         backgroundColor: '#070729ed',
-        padding: '0px 1.0875rem 1.45rem',
         paddingTop: 0,
       }}
     >

@@ -33,6 +33,8 @@ import Fade from 'react-reveal/Fade';
 
 import selfie from '../selfie/Head.png'
 
+import Footer from '../components/Footer'
+
 //styling small to large
 
 const Button = styled.button`
@@ -72,9 +74,10 @@ const PulsateText = keyframes`
 const Panel = styled.div`
   ${media.handheld`
     font-family: 'Raleway', sans-serif;
-    width: 88vw;
+    width: 100vw;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px 20px;
     `}
     ${media.desktop`
 
@@ -86,21 +89,21 @@ const RadarPanel = Panel.extend`
 `;
 
 const TitlePanel = Panel.extend`
-  min-height: 100vh;
+  position: fixed;
   padding-top: 10vh;
 `;
 
 const Panel1= Panel.extend`
 ${media.handheld`
-  width: 88vw;
+  position: relative;
+  z-index: 2;
+  background-color: #4f4fab;
   `}
 ${media.tablet`
-  min-height: 60vh;
+
   `}
 ${media.desktop`
-  padding-top: 10vh;
   padding-bottom: 10vh;
-  min-height: 100vh;
   `}
 `;
 
@@ -110,6 +113,7 @@ const ProjectTitle = styled.h1`
     text-align: center;
     margin-bottom: 0px;
     display: block;
+    grid-area: title;
     `}
   ${media.desktop`
     text-align: center;
@@ -146,6 +150,7 @@ ${media.desktop`
 
 const Bio = styled.p`
   ${media.handheld`
+    text-align: center;
     padding-top: 20px;
     font-size: 17px;
     `}
@@ -155,18 +160,15 @@ const Bio = styled.p`
     line-height: 1.3;
     `}
   ${media.desktop`
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 0px;
   `}
 `;
 
 const Description = styled.p`
   ${media.handheld`
-    display: block;
     text-align: center;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    grid-area: description;
   `}
   ${media.tablet`
     font-size: 23px;
@@ -185,7 +187,7 @@ const Url = styled.a`
 
 const UrlWrapper = styled.div`
   text-align: center;
-  margin-bottom: 5vh;
+  grid-area: url;
 `;
 
 const IconWrapper = styled.div`
@@ -199,14 +201,14 @@ const IconWrapper = styled.div`
     flex-wrap: wrap;
     bottom: 20px;
     max-width: 90%;
+    grid-area: icons;
     `}
     ${media.tablet`
     justify-content: space-between;
-    max-width: 75%;
       `}
     ${media.desktop`
     justify-content: space-between;
-    max-width: 60%;
+    grid-area: icons;
       `}
 `;
 
@@ -216,13 +218,7 @@ const Icon = styled.img`
     `}
   ${media.tablet``}
   ${media.desktop`
-    height: 40px;
     `}
-`;
-
-const Footer = styled.div`
-  text-align: center;
-  color: cyan;
 `;
 
 const FooterIcon = Icon.extend`
@@ -258,7 +254,7 @@ const ScrollAnimation = styled.div`
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
-    margin-top: 29vh
+    margin-top: 20vh
     bottom: 40px;
     `}
   ${media.tablet`
@@ -270,17 +266,7 @@ const ScrollAnimation = styled.div`
 const HeyThere = styled.h1`
   color: cyan;
   margin-bottom: 0px;
-`;
-
-const Card = styled.div`
-  color: #f8f8ff;
-  padding: 23px 16px;
-  border-radius: 8px;
-`;
-
-const Card1 = Card.extend`
-  background-color: unset
-  box-shadow: unset;
+  text-align: center;
 `;
 
 const Screenshot = styled.img`
@@ -289,13 +275,16 @@ const Screenshot = styled.img`
     margin-left: auto;
     margin-right: auto;
     margin-top: 23px;
-    max-width: 90%;
-    border-radius: 8px;
+    max-width: 50%;
+    grid-area:img;
+
     `}
   ${media.tablet`
-    width: 75%;
     `}
   ${media.desktop`
+    &:hover{
+      opacity: 0.5;
+    }
     `}
     ${media.extraBig`
 
@@ -307,22 +296,6 @@ const Copyright = styled.p`
   text-align: center;
   font-family: 'Raleway', sans-serif;
   margin-top: 10vh;
-`;
-
-const ToTop = styled.button`
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f8f8ff;
-  background-color: #01061f;
-  border-radius: 50%;
-  border: none;
-  width: 80px;
-  height: 80px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 `;
 
 const MyLocation = styled.p`
@@ -342,17 +315,18 @@ const Scroller = styled.div`
   position: sticky;
   background-color: inherit;
   width: 10px;
-  height: 80vh;
+  height: 93vh;
   float: right;
   right: 0px;
   top: 30px;
   margin: 0px;
   padding: 0px;
+  z-index: 3;
 `;
 
 const InnerScroller = styled.div`
   height: 0;
-  width: 100%;
+  width: 20%;
   background-color: cyan;
   margin: 0px;
   padding: 0px;
@@ -387,14 +361,18 @@ const Hr = styled.hr`
   ${media.handheld`
 background-color: #f8f8ff;
 height: 2px;
+
     `}
 
 `;
 
 const ContactPanel = Panel.extend`
 ${media.handheld`
-    padding-top: 5vh;
+    position: relative;
+    z-index: 2;
     min-height: 0;
+    background-color: #070729;
+    overflow: auto;
   `}
 ${media.tablet`
     min-height: 0;
@@ -426,14 +404,12 @@ const Selfie = styled.img`
   ${media.handheld`
     height: 250px;
     float: none;
-    margin-left: 20px;
     `}
   ${media.tablet`
-    margin-top: 10vh;
-    float: right;
     `}
   ${media.desktop`
-    margin-top: 20vh;
+    margin-top: 70px;
+    margin-bottom: 67px;
     `}
   ${media.extraBig`
     margin-top: 4vh;
@@ -456,9 +432,45 @@ const BioEmail = styled.span`
     `}
 `;
 
-const StickyHeaderDiv = styled.div`
-  position: sticky;
-  top: 0;
+const Container = styled.div`
+  position: relative;
+`;
+
+const InvisiblePanel = Panel.extend`
+  height: 100vh;
+`;
+
+const WorkPanel = Panel.extend`
+  z-index: 2;
+  position: relative;
+  background-color: #242454;
+
+`;
+
+const ProjectPanel = styled.div`
+  padding-top: 50px
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .5fr .25fr auto .5fr .5fr;
+  grid-template-areas:
+    "title"
+    "url"
+    "img"
+    "description"
+    "icons";
+`;
+
+const LiveUrl = Url.extend`
+  grid-area: url;
+`;
+
+const GitUrl = Url.extend`
+  grid-area: url2;
+`;
+
+const PanelHeader = styled.h4`
+  text-align: center;
 `;
 
 
@@ -476,13 +488,12 @@ class IndexPage extends React.Component  {
   render() {
 
     return (
-  <div id={'top'}>
-  <Scroller>
-    <InnerScroller id={'innerScroller'}/>
-  </Scroller>
+  <Container id={'top'}>
+    <Scroller>
+      <InnerScroller id={'innerScroller'}/>
+    </Scroller>
     <TitlePanel>
       <Name>I&#39;m Scott O&#39;Toole.</Name>
-      <TinyMenuWrapper><Scrollchor to='#about' animate={{ offset: 0, duration: 800}}>about</Scrollchor><Scrollchor to='#work'>work</Scrollchor><Scrollchor to='#contact'>contact</Scrollchor></TinyMenuWrapper>
       <Subtitle>I build websites and apps.
         <br /><br />
         <FaMapMarker />Atlanta, GA, USA.
@@ -494,25 +505,21 @@ class IndexPage extends React.Component  {
         <br />
       </ScrollAnimation>
     </TitlePanel>
-    <Panel1>
-    <Card1 id={'about'}>
-      <Fade left>
+    <InvisiblePanel>
+    </InvisiblePanel>
+    <Panel1 id={'about'}>
       <div>
-      <StickyHeaderDiv>
-      <h4>about</h4>
-      <Hr />
-      </StickyHeaderDiv>
+        <PanelHeader>about</PanelHeader>
+        <Hr />
       </div>
       <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
         <br />
-        </Fade>
-        <Fade up>
           <Bio>
             I like to do what's best for the project. I'm a fan of mobile-first, test-driven development.
             <br /><br />
             My toolbox:<br />
-            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby
+            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby, Netlify, Chrome DevTools
             <br />
             <b>Back-end:</b> Node, Express, MongoDB, Heroku
             <br />
@@ -520,144 +527,124 @@ class IndexPage extends React.Component  {
             <br />
             <b>Version Control:</b> Git and Github
             <BioEmail>
-            I am currently taking on new projects. Get in touch via my email:<br />
-            <EmailLink href={'mailto:scottiedog45@gmail.com'}>scottiedog45@gmail.com</EmailLink>
+            I am currently taking on new projects. Get in touch via my&nbsp;
+            <EmailLink href={'mailto:scottmatthewotoole@gmail.com'} style={{textDecoration: 'underline', fontSize: 'inherit'}}>email.</EmailLink>
             </BioEmail>
             <br />
             Continue scrolling to see my work.
           </Bio>
-        </Fade>
-      </Card1>
-    </Panel1>
-    <Panel id={'work'}>
-      <Card>
-        <Fade left>
-        <h4>work</h4>
+      </Panel1>
+      <WorkPanel id={'work'}>
+      <div>
+        <PanelHeader>work</PanelHeader>
         <Hr />
-        <div>
-          <ProjectTitle>
-            piqnic
-          </ProjectTitle>
-          <UrlWrapper>
-          <Url
-            href={'https://diplomat-cat-50211.netlify.com/'}
-            target={'_blank'}>
-            Live Site
-          </Url>
-          <Url
-            href={'https://github.com/scottiedog45/piqnic'}
-            target={'_blank'}>
-            Github Repo
-          </Url>
-          </UrlWrapper>
-          </div>
-        </Fade>
-        <Fade up>
-          <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
-          <IconWrapper>
-            <Icon src={html} alt={'html logo'} />
-            <Icon src={css} alt={'css logo'} />
-            <Icon src={js} alt={'js logo'} />
-            <Icon src={jquery} alt={'jquery logo'} />
-          </IconWrapper>
-          <Description>
-           Google Maps API + OpenWeather API + a dash of jQuery = piqnic. Hungry yet?
-          </Description>
-        </Fade>
-      </Card>
-    </Panel>
-    <Panel>
-      <Card>
+      </div>
+        <ProjectPanel>
+            <ProjectTitle>
+              piqnic
+            </ProjectTitle>
+            <UrlWrapper>
+            <LiveUrl
+              href={'https://diplomat-cat-50211.netlify.com/'}
+              target={'_blank'}>
+              Live Site
+            </LiveUrl>
+            <GitUrl
+              href={'https://github.com/scottiedog45/piqnic'}
+              target={'_blank'}>
+              Github Repo
+            </GitUrl>
+            </UrlWrapper>
+            <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
+            <IconWrapper>
+              <Icon src={html} alt={'html logo'} />
+              <Icon src={css} alt={'css logo'} />
+              <Icon src={js} alt={'js logo'} />
+              <Icon src={jquery} alt={'jquery logo'} />
+            </IconWrapper>
+            <Description>
+             Google Maps API + OpenWeather API + a dash of jQuery = piqnic. Hungry yet?
+            </Description>
+  </ProjectPanel>
+        <ProjectPanel>
+            <ProjectTitle>
+              hai·koo
+            </ProjectTitle>
+            <UrlWrapper>
+            <Url
+              href={'https://young-springs-68250.herokuapp.com/'}
+              target={'_blank'}>
+              Live Site
+            </Url>
+            <Url
+              href={'https://github.com/scottiedog45/haiku'}
+              target={'_blank'}>
+              Github Repo
+            </Url>
+            </UrlWrapper>
+            <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
+            <IconWrapper>
+              <Icon src={html} alt={'html logo'} />
+              <Icon src={css} alt={'css logo'} />
+              <Icon src={js} alt={'js logo'} />
+              <Icon src={mocha} alt={'mocha logo'} />
+              <Icon src={chai} alt={'chai logo'} />
+              <Icon src={jquery} alt={'jquery logo'} />
+              <Icon src={express} alt={'express logo'} />
+              <Icon src={node} alt={'node logo'} />
+            </IconWrapper>
+            <Description>
+              I tried to count syllables of English words with the Words API. Turns out it's almost possible.
+            </Description>
+            </ProjectPanel>
+        <ProjectPanel>
+            <ProjectTitle>
+              Leev
+            </ProjectTitle>
+            <UrlWrapper>
+            <Url
+              href={'https://xenodochial-pare-c355a0.netlify.com/'}
+              target={'_blank'}>
+              Live Site
+            </Url>
+            <Url
+              href={'https://github.com/scottiedog45/haiku'}
+              target={'_blank'}>
+              Github Repo
+            </Url>
+            </UrlWrapper>
+                    <Screenshot src={leevMac} alt={'screenshot of leev app'} />
+            <IconWrapper>
+              <Icon src={html} alt={'html logo'} />
+              <Icon src={styledcomponents} alt={'styled components logo'} />
+              <Icon src={js} alt={'js logo'} />
+              <Icon src={react} alt={'react logo'} />
+              <Icon src={redux} alt={'redux logo'} />
+              <Icon src={reduxForm} alt={'redux form logo'} />
+              <Icon src={mocha} alt={'mocha logo'} />
+              <Icon src={jest} alt={'jest logo'} />
+              <Icon src={chai} alt={'chai logo'} />
+              <Icon src={express} alt={'express logo'} />
+              <Icon src={node} alt={'node logo'} />
+            </IconWrapper>
+            <Description>
+              This app began as a conversation between myself and an overworked personnel manager. Use the demo login to preview the app.
+            </Description>
+            </ProjectPanel>
+      </WorkPanel>
+      <ContactPanel id={'contact'}>
         <Fade left>
-          <ProjectTitle>
-            hai·koo
-          </ProjectTitle>
-          <UrlWrapper>
-          <Url
-            href={'https://young-springs-68250.herokuapp.com/'}
-            target={'_blank'}>
-            Live Site
-          </Url>
-          <Url
-            href={'https://github.com/scottiedog45/haiku'}
-            target={'_blank'}>
-            Github Repo
-          </Url>
-          </UrlWrapper>
+        <PanelHeader>contact</PanelHeader>
+        <ContactPanelContent>
+        <Hr />
+        <p>like what you see? let's work together.</p>
+        <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
+          <Footer />
+        </ContactPanelContent>
         </Fade>
-        <Fade up>
-          <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
-          <IconWrapper>
-            <Icon src={html} alt={'html logo'} />
-            <Icon src={css} alt={'css logo'} />
-            <Icon src={js} alt={'js logo'} />
-            <Icon src={mocha} alt={'mocha logo'} />
-            <Icon src={chai} alt={'chai logo'} />
-            <Icon src={jquery} alt={'jquery logo'} />
-            <Icon src={express} alt={'express logo'} />
-            <Icon src={node} alt={'node logo'} />
-          </IconWrapper>
-          <Description>
-            I tried to count syllables of English words with the Words API. Turns out it's almost possible.
-          </Description>
-        </Fade>
-      </Card>
-    </Panel>
-    <Panel>
-      <Card>
-        <Fade left>
-          <ProjectTitle>
-            Leev
-          </ProjectTitle>
-          <UrlWrapper>
-          <Url
-            href={'https://xenodochial-pare-c355a0.netlify.com/'}
-            target={'_blank'}>
-            Live Site
-          </Url>
-          <Url
-            href={'https://github.com/scottiedog45/haiku'}
-            target={'_blank'}>
-            Github Repo
-          </Url>
-          </UrlWrapper>
-        </Fade>
-        <Fade up>
-          <Screenshot src={leevMac} alt={'screenshot of leev app'} />
-          <IconWrapper>
-            <Icon src={html} alt={'html logo'} />
-            <Icon src={styledcomponents} alt={'styled components logo'} />
-            <Icon src={js} alt={'js logo'} />
-            <Icon src={react} alt={'react logo'} />
-            <Icon src={redux} alt={'redux logo'} />
-            <Icon src={reduxForm} alt={'redux form logo'} />
-            <Icon src={mocha} alt={'mocha logo'} />
-            <Icon src={jest} alt={'jest logo'} />
-            <Icon src={chai} alt={'chai logo'} />
-            <Icon src={express} alt={'express logo'} />
-            <Icon src={node} alt={'node logo'} />
-          </IconWrapper>
-          <Description>
-            This app began as a conversation between myself and an overworked personnel manager. Use the demo login to preview the app.
-          </Description>
-        </Fade>
-      </Card>
-    </Panel>
-    <ContactPanel id={'contact'}>
-      <Fade left>
-      <h4>contact</h4>
-      <ContactPanelContent>
-      <Hr />
-      <p>like what you see? let's work together</p>
-      <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
-      </ContactPanelContent>
-      </Fade>
-    </ContactPanel>
-    <Scrollchor to='#top'>
-      <ToTop>top</ToTop>
-    </Scrollchor>
-    <Copyright>&copy; Scott O&#39;Toole</Copyright>
-  </div>
+        <Copyright>&copy; Scott O&#39;Toole</Copyright>
+      </ContactPanel>
+  </Container>
 )
 }
 }

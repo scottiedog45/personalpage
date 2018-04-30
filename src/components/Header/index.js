@@ -20,6 +20,7 @@ const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 3;
+  font-family: 'Raleway', sans-serif;
 `;
 
 

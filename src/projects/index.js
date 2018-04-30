@@ -150,6 +150,7 @@ const Screenshot = styled.img`
     margin-right: auto;
     margin-top: 23px;
     grid-area:img;
+    width: 100%
     `}
   ${media.tablet`
 max-width: 75%;

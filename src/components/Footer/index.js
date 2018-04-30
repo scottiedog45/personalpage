@@ -15,6 +15,8 @@ const Headerdiv = styled.div`
   background-color: inherit;
   text-align: center;
   font-family: 'Raleway', sans-serif;
+  position: relative;
+  background-color: #070729;
 `;
 
 const TinyLink = styled.a`

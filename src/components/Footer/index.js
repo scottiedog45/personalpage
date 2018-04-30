@@ -7,12 +7,26 @@ import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'r
 
 import FontAwesome from 'react-fontawesome';
 
+import { media } from '../../../src/style-utils'
+
 const Headerdiv = styled.div`
-  margin-top: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
   background-color: inherit;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+`;
+
+const TinyLink = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+  &:hover{
+    text-decoration: line-through;
+  }
+  &:visited{
+    color: #f8f8ff;
+    text-decoration: none;
+  }
 `;
 
 const ContactFloater = styled.div`
@@ -23,6 +37,7 @@ const ContactFloater = styled.div`
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 `;
 
 const ContactLink = styled.a`
@@ -64,18 +79,35 @@ const BlogLinkWrapper = ContactLinkWrapper.extend`
   margin-left: 7px;
 `;
 
-const BlogLink = styled.a`
-color: #f8f8ff;
-word-wrap: normal;
-text-decoration: none;
-&:hover{
-  color: cyan;
-}
-letter-spacing: 5px;
+const Copyright = styled.p`
+  display: block;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 5vh;
+`;
+
+const EmailLink = TinyLink.extend`
+  ${media.handheld`
+    color: #f8f8ff;
+  font-size: 16px;
+  letter-spaceing: 3px;
+    `}
+    ${media.tablet`
+      font-size: 22px;
+      `}
+  ${media.desktop`
+    font-size: 28px;
+    `}
+`;
+
+const PanelHeader = styled.h4`
+  text-align: center;
 `;
 
 const Footer = () => (
-  <Headerdiv>
+  <Headerdiv id ={'contact'}>
+    <PanelHeader>contact</PanelHeader>
+    <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
     <ContactFloater>
       <ResumeLinkWrapper>
         <ResumeLink href={resume} target='_blank'>
@@ -99,6 +131,7 @@ const Footer = () => (
         </ContactLink>
       </ContactLinkWrapper>
     </ContactFloater>
+    <Copyright>&copy; Scott O&#39;Toole</Copyright>
   </Headerdiv>
 )
 

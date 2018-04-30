@@ -3,24 +3,7 @@ import Link from 'gatsby-link'
 
 import styled, {keyframes} from 'styled-components'
 
-import chai from '../icons/chai.png'
-import css from '../icons/css.png'
-import express from '../icons/expressjslogo.png'
-import styledcomponents from '../icons/styled-components.png'
-import githublogo from '../icons/github-512 (1).png'
-import html from '../icons/html5.png'
-import jest from '../icons/jest.png'
-import jquery from '../icons/jquery.png'
-import js from '../icons/js.png'
-import redux from '../icons/redux.png'
-import mocha from '../icons/mocha (1).png'
-import node from '../icons/node.png'
-import react from '../icons/react.png'
-import reduxForm from '../icons/redux form.png'
 
-import haikuMac from '../screenshots/haikuMac.png'
-import leevMac from '../screenshots/leevMac.png'
-import piqnicMac from '../screenshots/piqnicMac.png'
 
 import Scrollchor from 'react-scrollchor'
 import FontAwesome from 'react-fontawesome';
@@ -34,6 +17,8 @@ import Fade from 'react-reveal/Fade';
 import selfie from '../selfie/Head.png'
 
 import Footer from '../components/Footer'
+
+import Projects from '../projects'
 
 //styling small to large
 
@@ -57,6 +42,18 @@ const Button = styled.button`
     width: 200px;
     height: 50px;
     `}
+`;
+
+const TinyLink = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+  &:hover{
+    text-decoration: line-through;
+  }
+  &:visited{
+    color: #f8f8ff;
+    text-decoration: none;
+  }
 `;
 
 const PulsateText = keyframes`
@@ -108,7 +105,7 @@ ${media.desktop`
 `;
 
 const ProjectTitle = styled.h1`
-  ${media.handheld`
+  ${media.handheld`ur
     font-size: 55px;
     text-align: center;
     margin-bottom: 0px;
@@ -162,6 +159,9 @@ const Bio = styled.p`
   ${media.desktop`
     font-size: 18px;
     margin-bottom: 0px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   `}
 `;
 
@@ -170,12 +170,19 @@ const Description = styled.p`
     text-align: center;
     grid-area: description;
     font-size: 16px;
+    
   `}
   ${media.tablet`
     font-size: 16px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   `}
   ${media.desktop`
     font-size: 16px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   `}
 `;
 
@@ -254,8 +261,8 @@ const ScrollAnimation = styled.div`
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
-    margin-top: 20vh
     bottom: 40px;
+    padding-top: 72px;
     `}
   ${media.tablet`
     `}
@@ -288,12 +295,21 @@ const Screenshot = styled.img`
       `}
 `;
 
-const Copyright = styled.p`
-  display: block;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 10vh;
+
+const EmailLink = TinyLink.extend`
+  ${media.handheld`
+    color: #f8f8ff;
+  font-size: 16px;
+  letter-spaceing: 3px;
+    `}
+    ${media.tablet`
+      font-size: 22px;
+      `}
+  ${media.desktop`
+    font-size: 28px;
+    `}
 `;
+
 
 const MyLocation = styled.p`
   margin-top: 10px;
@@ -323,18 +339,6 @@ const TinyMenuWrapper = styled.div`
   text-decoration: none;
 `;
 
-const TinyLink = styled.a`
-  cursor: pointer;
-  text-decoration: none;
-  &:hover{
-    text-decoration: line-through;
-  }
-  &:visited{
-    color: #f8f8ff;
-    text-decoration: none;
-  }
-`;
-
 const Hr = styled.hr`
   ${media.handheld`
 background-color: #f8f8ff;
@@ -360,19 +364,7 @@ ${media.desktop`
   `}
 `;
 
-const EmailLink = TinyLink.extend`
-  ${media.handheld`
-    color: #f8f8ff;
-  font-size: 16px;
-  letter-spaceing: 3px;
-    `}
-    ${media.tablet`
-      font-size: 22px;
-      `}
-  ${media.desktop`
-    font-size: 28px;
-    `}
-`;
+
 
 const ContactPanelContent = styled.div`
   text-align: center;
@@ -418,12 +410,7 @@ const InvisiblePanel = Panel.extend`
   height: 100vh;
 `;
 
-const WorkPanel = Panel.extend`
-  z-index: 2;
-  position: relative;
-  background-color: #242454;
 
-`;
 
 const ProjectPanel = styled.div`
   padding-top: 50px
@@ -462,7 +449,6 @@ class IndexPage extends React.Component  {
       <Name>I&#39;m Scott O&#39;Toole.</Name>
       <Subtitle>I build websites and apps.
         <br /><br />
-        
       </Subtitle>
       <ScrollAnimation>
         scroll
@@ -476,7 +462,7 @@ class IndexPage extends React.Component  {
     <Panel1 id={'about'}>
       <div>
         <PanelHeader>about</PanelHeader>
-        <Hr />
+   
       </div>
       <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
@@ -500,114 +486,8 @@ class IndexPage extends React.Component  {
             Continue scrolling to see my work.
           </Bio>
       </Panel1>
-      <WorkPanel id={'work'}>
-      <div>
-        <PanelHeader>work</PanelHeader>
-        <Hr />
-      </div>
-        <ProjectPanel>
-            <ProjectTitle>
-              piqnic
-            </ProjectTitle>
-            <UrlWrapper>
-            <LiveUrl
-              href={'https://diplomat-cat-50211.netlify.com/'}
-              target={'_blank'}>
-              Live Site
-            </LiveUrl>
-            <GitUrl
-              href={'https://github.com/scottiedog45/piqnic'}
-              target={'_blank'}>
-              Github Repo
-            </GitUrl>
-            </UrlWrapper>
-            <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
-            <IconWrapper>
-              <Icon src={html} alt={'html logo'} />
-              <Icon src={css} alt={'css logo'} />
-              <Icon src={js} alt={'js logo'} />
-              <Icon src={jquery} alt={'jquery logo'} />
-            </IconWrapper>
-            <Description>
-             Google Maps API + OpenWeather API + a dash of jQuery = piqnic. Hungry yet?
-            </Description>
-  </ProjectPanel>
-        <ProjectPanel>
-            <ProjectTitle>
-              hai·koo
-            </ProjectTitle>
-            <UrlWrapper>
-            <Url
-              href={'https://young-springs-68250.herokuapp.com/'}
-              target={'_blank'}>
-              Live Site
-            </Url>
-            <Url
-              href={'https://github.com/scottiedog45/haiku'}
-              target={'_blank'}>
-              Github Repo
-            </Url>
-            </UrlWrapper>
-            <Screenshot src={haikuMac} alt={'screenshot of Haiku app'} />
-            <IconWrapper>
-              <Icon src={html} alt={'html logo'} />
-              <Icon src={css} alt={'css logo'} />
-              <Icon src={js} alt={'js logo'} />
-              <Icon src={mocha} alt={'mocha logo'} />
-              <Icon src={chai} alt={'chai logo'} />
-              <Icon src={jquery} alt={'jquery logo'} />
-              <Icon src={express} alt={'express logo'} />
-              <Icon src={node} alt={'node logo'} />
-            </IconWrapper>
-            <Description>
-              I tried to count syllables of English words with the Words API. Turns out it's almost possible.
-            </Description>
-            </ProjectPanel>
-        <ProjectPanel>
-            <ProjectTitle>
-              Leev
-            </ProjectTitle>
-            <UrlWrapper>
-            <Url
-              href={'https://xenodochial-pare-c355a0.netlify.com/'}
-              target={'_blank'}>
-              Live Site
-            </Url>
-            <Url
-              href={'https://github.com/scottiedog45/haiku'}
-              target={'_blank'}>
-              Github Repo
-            </Url>
-            </UrlWrapper>
-                    <Screenshot src={leevMac} alt={'screenshot of leev app'} />
-            <IconWrapper>
-              <Icon src={html} alt={'html logo'} />
-              <Icon src={styledcomponents} alt={'styled components logo'} />
-              <Icon src={js} alt={'js logo'} />
-              <Icon src={react} alt={'react logo'} />
-              <Icon src={redux} alt={'redux logo'} />
-              <Icon src={reduxForm} alt={'redux form logo'} />
-              <Icon src={mocha} alt={'mocha logo'} />
-              <Icon src={jest} alt={'jest logo'} />
-              <Icon src={chai} alt={'chai logo'} />
-              <Icon src={express} alt={'express logo'} />
-              <Icon src={node} alt={'node logo'} />
-            </IconWrapper>
-            <Description>
-              This app began as a conversation between myself and an overworked personnel manager. Use the demo login to preview the app.
-            </Description>
-            </ProjectPanel>
-      </WorkPanel>
-      <ContactPanel id={'contact'}>
-        <PanelHeader>contact</PanelHeader>
-        <ContactPanelContent>
-        <Hr />
-        <p>like what you see? let's work together.</p>
-        <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
-          <Footer />
-        </ContactPanelContent>
-        <Copyright>&copy; Scott O&#39;Toole</Copyright>
-      </ContactPanel>
+      <Projects />
+      <Footer />
   </Container>
 )
 }

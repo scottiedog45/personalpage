@@ -6,12 +6,13 @@ import FontAwesome from 'react-fontawesome';
 import Scrollchor from 'react-scrollchor'
 
 const TinyMenuWrapper = styled.div`
-  font-size: 13px;
+  font-size: 17px;
   letter-spacing: 3px;
   text-decoration: none;
   display: block;
   float: right;
-  margin-right: 20px;
+  margin-right: 50px;
+  margin-top: 10px;
 `;
 
 const HeaderWrapper = styled.div`
@@ -26,14 +27,14 @@ const Header = () => (
   <HeaderWrapper>
   <div style ={{position:'relative'}}>
   <TinyMenuWrapper>
-  <div style = {{marginLeft:20, display: 'inline'}}>
-  <Scrollchor to='#about' animate={{offset: -20, duration: 800}}>about</Scrollchor>
+  <div style = {{marginLeft:50, display: 'inline'}}>
+  <Scrollchor to='#about' animate={{duration: 800}}>about</Scrollchor>
   </div>
-      <div style={{ marginLeft: 20, display: 'inline' }}>
-  <Scrollchor to='#work' animate={{offset: -20, duration: 800}}>work</Scrollchor>
+      <div style={{ marginLeft: 50, display: 'inline' }}>
+  <Scrollchor to='#work' animate={{duration: 800}}>work</Scrollchor>
   </div>
-      <div style={{ marginLeft: 20, display: 'inline' }}>
-  <Scrollchor to='#contact' animate={{offset: -20, duration: 800}}>contact</Scrollchor>
+      <div style={{ marginLeft: 50, display: 'inline' }}>
+  <Scrollchor to='#contact' animate={{duration: 800}}>contact</Scrollchor>
   </div>
   </TinyMenuWrapper>
   </div>

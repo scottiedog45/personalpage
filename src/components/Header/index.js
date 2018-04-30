@@ -1,10 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import resume from '../../contactIcons/resume.pdf'
-
-import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare} from 'react-icons/lib/fa'
-
 import FontAwesome from 'react-fontawesome';
 
 import Scrollchor from 'react-scrollchor'
@@ -12,12 +8,10 @@ import Scrollchor from 'react-scrollchor'
 const TinyMenuWrapper = styled.div`
   font-size: 13px;
   letter-spacing: 3px;
-  display: flex;
-  justify-content: space-around;
   text-decoration: none;
-  margin-left: auto;
-  margin-right: auto;
-
+  display: block;
+  float: right;
+  margin-right: 20px;
 `;
 
 const HeaderWrapper = styled.div`
@@ -25,18 +19,24 @@ const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 3;
-  padding-left: 18px;
 `;
 
 
 const Header = () => (
   <HeaderWrapper>
+  <div style ={{position:'relative'}}>
   <TinyMenuWrapper>
+  <div style = {{marginLeft:20, display: 'inline'}}>
   <Scrollchor to='#about' animate={{offset: -20, duration: 800}}>about</Scrollchor>
+  </div>
+      <div style={{ marginLeft: 20, display: 'inline' }}>
   <Scrollchor to='#work' animate={{offset: -20, duration: 800}}>work</Scrollchor>
+  </div>
+      <div style={{ marginLeft: 20, display: 'inline' }}>
   <Scrollchor to='#contact' animate={{offset: -20, duration: 800}}>contact</Scrollchor>
+  </div>
   </TinyMenuWrapper>
-
+  </div>
   </HeaderWrapper>
 )
 

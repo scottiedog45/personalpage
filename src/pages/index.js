@@ -132,7 +132,7 @@ const ButtonWrapper = styled.div`
 const Subtitle = styled.p`
 ${media.handheld`
   margin-top:50px;
-  text-align: center;
+  padding-left: 6px;
   `}
 ${media.tablet`
   font-size: 23px;
@@ -235,7 +235,6 @@ ${media.handheld`
   color: cyan;
   font-weight: 100;
   font-family: inherit;
-  text-align: center;
   font-size: 29px;
   margin-bottom: 10px;
   `}
@@ -283,7 +282,7 @@ const Screenshot = styled.img`
   ${media.tablet`
     `}
   ${media.desktop`
-
+    `}
     ${media.extraBig`
 
       `}
@@ -309,26 +308,7 @@ const PlaceDiv = styled.div`
   display: inline-block;
 `;
 
-const Scroller = styled.div`
-  position: sticky;
-  background-color: inherit;
-  width: 10px;
-  height: 93vh;
-  float: right;
-  right: 0px;
-  top: 30px;
-  margin: 0px;
-  padding: 0px;
-  z-index: 3;
-`;
 
-const InnerScroller = styled.div`
-  height: 0;
-  width: 20%;
-  background-color: cyan;
-  margin: 0px;
-  padding: 0px;
-`;
 
 const Tool = styled.div`
   display: inline;
@@ -474,27 +454,15 @@ const PanelHeader = styled.h4`
 
 class IndexPage extends React.Component  {
 
-  componentDidMount() {
-    window.addEventListener('scroll', ()=> {
-      let fullHeight = document.body.scrollHeight;
-      let positionOfTopOfWindow = window.scrollY;
-      let heightOfWindow = window.innerHeight;
-      document.getElementById('innerScroller').style.height =  (((((positionOfTopOfWindow+heightOfWindow)*(positionOfTopOfWindow/(fullHeight-heightOfWindow)))/fullHeight)*100).toFixed(2) + '%');
-    })
-  }
-
   render() {
 
     return (
   <Container id={'top'}>
-    <Scroller>
-      <InnerScroller id={'innerScroller'}/>
-    </Scroller>
     <TitlePanel>
       <Name>I&#39;m Scott O&#39;Toole.</Name>
       <Subtitle>I build websites and apps.
         <br /><br />
-        <FaMapMarker />Atlanta, GA, USA.
+        
       </Subtitle>
       <ScrollAnimation>
         scroll
@@ -519,7 +487,7 @@ class IndexPage extends React.Component  {
             My toolbox:<br />
             <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby, Netlify, Chrome DevTools
             <br />
-            <b>Back-end:</b> Node, Express, MongoDB, Heroku
+            <b>Back-end:</b> Node, Express, mLab, Mongoose, MongoDB, Heroku, REST API
             <br />
             <b>Testing:</b> Mocha, Chai, Enzyme, Jest
             <br />

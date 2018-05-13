@@ -1,48 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
 import styled, {keyframes} from 'styled-components'
-
-
-
 import Scrollchor from 'react-scrollchor'
 import FontAwesome from 'react-fontawesome';
-
 import {media} from '../style-utils'
-
 import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMarker} from 'react-icons/lib/fa'
-
 import Fade from 'react-reveal/Fade';
-
 import selfie from '../selfie/Head.png'
-
 import Footer from '../components/Footer'
-
 import Projects from '../projects'
 
 //styling small to large
-
-const Button = styled.button`
-  ${media.handheld`
-    width: 140px;
-    height: 50px;
-    font-size: 18px;
-    background-color: #e94889;
-    color: white;
-    border: none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    cursor: pointer;
-    `}
-  ${media.tablet`
-    font-size: 25px;
-    width: 200px;
-    `}
-  ${media.desktop`
-    font-size: 18px;
-    width: 200px;
-    height: 50px;
-    `}
-`;
 
 const TinyLink = styled.a`
   cursor: pointer;
@@ -77,12 +45,7 @@ const Panel = styled.div`
     padding: 20px 20px;
     `}
     ${media.desktop`
-
       `}
-`;
-
-const RadarPanel = Panel.extend`
-  height: 100vh;
 `;
 
 const TitlePanel = Panel.extend`
@@ -91,32 +54,17 @@ const TitlePanel = Panel.extend`
 `;
 
 const Panel1= Panel.extend`
-${media.handheld`
-  position: relative;
-  z-index: 2;
-  background-color: #4f4fab;
-  `}
-${media.tablet`
+  ${media.handheld`
+    position: relative;
+    z-index: 2;
+    background-color: #4f4fab;
+    `}
+  ${media.tablet`
 
-  `}
-${media.desktop`
-  padding-bottom: 10vh;
-  `}
-`;
-
-const ProjectTitle = styled.h1`
-  ${media.handheld`ur
-    font-size: 55px;
-    text-align: center;
-    margin-bottom: 0px;
-    display: block;
-    grid-area: title;
     `}
   ${media.desktop`
-    text-align: center;
-    font-size: 65px;
+    padding-bottom: 10vh;
     `}
-
 `;
 
 const ButtonWrapper = styled.div`
@@ -127,22 +75,22 @@ const ButtonWrapper = styled.div`
 `;
 
 const Subtitle = styled.p`
-${media.handheld`
-  margin-top:50px;
-  padding-left: 6px;
-  `}
-${media.tablet`
-  font-size: 23px;
-  line-height: 1.1;
-  `}
-${media.desktop`
-  font-size: 23px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-  line-height: 1.1;
-  `}
+  ${media.handheld`
+    margin-top:50px;
+    padding-left: 6px;
+    `}
+  ${media.tablet`
+    font-size: 23px;
+    line-height: 1.1;
+    `}
+  ${media.desktop`
+    font-size: 23px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    line-height: 1.1;
+    `}
 `;
 
 const Bio = styled.p`
@@ -165,93 +113,22 @@ const Bio = styled.p`
   `}
 `;
 
-const Description = styled.p`
-  ${media.handheld`
-    text-align: center;
-    grid-area: description;
-    font-size: 16px;
-    
-  `}
-  ${media.tablet`
-    font-size: 16px;
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  `}
-  ${media.desktop`
-    font-size: 16px;
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  `}
-`;
-
-const Url = styled.a`
-  cursor: pointer;
-  margin-left: 5px;
-  color: cyan;
-  margin-right: 5px;
-`;
-
-const UrlWrapper = styled.div`
-  text-align: center;
-  grid-area: url;
-`;
-
-const IconWrapper = styled.div`
-  ${media.handheld`
-    justify-content: space-around;
-    filter: grayscale(85%);
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    bottom: 20px;
-    max-width: 90%;
-    grid-area: icons;
-    `}
-    ${media.tablet`
-    justify-content: space-between;
-      `}
-    ${media.desktop`
-    justify-content: space-between;
-    grid-area: icons;
-      `}
-`;
-
-const Icon = styled.img`
-  ${media.handheld`
-    height: 28px;
-    `}
-  ${media.tablet``}
-  ${media.desktop`
-    `}
-`;
-
-const FooterIcon = Icon.extend`
-  margin-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
 const Name = styled.h1`
-${media.handheld`
-  margin-top: 18vh
-  color: cyan;
-  font-weight: 100;
-  font-family: inherit;
-  font-size: 29px;
-  margin-bottom: 10px;
-  `}
-${media.tablet`
-  font-size: 40px;
-  `}
-${media.desktop`
-  display: block;
-  font-size: 80px;
-  `}
+  ${media.handheld`
+    margin-top: 18vh
+    color: cyan;
+    font-weight: 100;
+    font-family: inherit;
+    font-size: 29px;
+    margin-bottom: 10px;
+    `}
+  ${media.tablet`
+    font-size: 40px;
+    `}
+  ${media.desktop`
+    display: block;
+    font-size: 80px;
+    `}
 `;
 
 const ScrollAnimation = styled.div`
@@ -276,26 +153,6 @@ const HeyThere = styled.h1`
   text-align: center;
 `;
 
-const Screenshot = styled.img`
-  ${media.handheld`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 23px;
-    max-width: 50%;
-    grid-area:img;
-
-    `}
-  ${media.tablet`
-    `}
-  ${media.desktop`
-    `}
-    ${media.extraBig`
-
-      `}
-`;
-
-
 const EmailLink = TinyLink.extend`
   ${media.handheld`
     color: #f8f8ff;
@@ -308,66 +165,6 @@ const EmailLink = TinyLink.extend`
   ${media.desktop`
     font-size: 28px;
     `}
-`;
-
-
-const MyLocation = styled.p`
-  margin-top: 10px;
-`;
-
-const MarkerDiv = styled.div`
-  margin-top: -5px;
-  display: inline;
-`;
-
-const PlaceDiv = styled.div`
-  display: inline-block;
-`;
-
-
-
-const Tool = styled.div`
-  display: inline;
-  border: 1px solid white;
-`;
-
-const TinyMenuWrapper = styled.div`
-  font-size: 13px;
-  letter-spacing: 3px;
-  display: flex;
-  justify-content: space-evenly;
-  text-decoration: none;
-`;
-
-const Hr = styled.hr`
-  ${media.handheld`
-background-color: #f8f8ff;
-height: 2px;
-
-    `}
-
-`;
-
-const ContactPanel = Panel.extend`
-${media.handheld`
-    position: relative;
-    z-index: 2;
-    min-height: 0;
-    background-color: #070729;
-    overflow: auto;
-  `}
-${media.tablet`
-    min-height: 0;
-  `}
-${media.desktop`
-    min-height: 0;
-  `}
-`;
-
-
-
-const ContactPanelContent = styled.div`
-  text-align: center;
 `;
 
 const Selfie = styled.img`
@@ -410,30 +207,6 @@ const InvisiblePanel = Panel.extend`
   height: 100vh;
 `;
 
-
-
-const ProjectPanel = styled.div`
-  padding-top: 50px
-  padding-bottom: 50px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: .5fr .25fr auto .5fr .5fr;
-  grid-template-areas:
-    "title"
-    "url"
-    "img"
-    "description"
-    "icons";
-`;
-
-const LiveUrl = Url.extend`
-  grid-area: url;
-`;
-
-const GitUrl = Url.extend`
-  grid-area: url2;
-`;
-
 const PanelHeader = styled.h4`
   text-align: center;
 `;
@@ -462,13 +235,12 @@ class IndexPage extends React.Component  {
     <Panel1 id={'about'}>
       <div>
         <PanelHeader>about</PanelHeader>
-   
       </div>
       <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
         <HeyThere>Hey there.</HeyThere>
         <br />
           <Bio>
-            I like to do what's best for the project. I'm a fan of mobile-first, test-driven development.
+            I like to do what's best for the project. I'm a fan of mobile-first development.
             <br /><br />
             My toolbox:<br />
             <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby, Netlify, Chrome DevTools

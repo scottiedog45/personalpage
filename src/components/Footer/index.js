@@ -9,7 +9,7 @@ import FontAwesome from 'react-fontawesome';
 
 import { media } from '../../../src/style-utils'
 
-const Headerdiv = styled.div`
+const FooterDiv = styled.div`
   padding-top: 20px;
   padding-bottom: 10px;
   background-color: inherit;
@@ -107,7 +107,7 @@ const PanelHeader = styled.h4`
 `;
 
 const Footer = () => (
-  <Headerdiv id ={'contact'}>
+  <FooterDiv id ={'contact'}>
     <PanelHeader>contact</PanelHeader>
     <EmailLink href={'mailto:scottmatthewotoole@gmail.com'}>scottmatthewotoole@gmail.com</EmailLink>
     <ContactFloater>
@@ -134,7 +134,7 @@ const Footer = () => (
       </ContactLinkWrapper>
     </ContactFloater>
     <Copyright>&copy; Scott O&#39;Toole</Copyright>
-  </Headerdiv>
+  </FooterDiv>
 )
 
 export default Footer

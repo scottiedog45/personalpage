@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { media } from '../style-utils'
-
 import selfie from '../selfie/Head.png'
 
 const Panel = styled.div`

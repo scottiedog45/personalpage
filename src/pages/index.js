@@ -9,6 +9,8 @@ import Fade from 'react-reveal/Fade';
 import Bio from '../bio'
 import Footer from '../components/Footer'
 import Projects from '../projects'
+import Services from '../services'
+import Hero from '../images/hero.png'
 
 //styling small to large
 
@@ -42,48 +44,31 @@ const Panel = styled.div`
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 20px;
     `}
     ${media.desktop`
       `}
 `;
 
 const TitlePanel = Panel.extend`
-  padding-top: 10vh;
   height: 100vh;
-`;
-
-const Panel1= Panel.extend`
-  ${media.handheld`
-    position: relative;
-    z-index: 2;
-    background-color: #4f4fab;
-    `}
-  ${media.tablet`
-
-    `}
-  ${media.desktop`
-    padding-bottom: 10vh;
-    `}
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  position: relative;
+  overflow: hidden;
 `;
 
 const Subtitle = styled.p`
   ${media.handheld`
     margin-top:50px;
-    padding-left: 20px;
+ 
+    position: relative;
+    z-index: 3;
+    text-align: center;
     `}
   ${media.tablet`
     font-size: 23px;
     line-height: 1.1;
     `}
   ${media.desktop`
+    
     font-size: 23px;
     width: 100%;
     margin-left: auto;
@@ -95,17 +80,21 @@ const Subtitle = styled.p`
 
 const Name = styled.h1`
   ${media.handheld`
-    margin-top: 18vh
-    color: cyan;
+    padding-top: 30vh
+    color: white;
     font-weight: 100;
     font-family: inherit;
     font-size: 29px;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
     `}
   ${media.tablet`
     font-size: 40px;
     `}
   ${media.desktop`
+    
     display: block;
     font-size: 80px;
     `}
@@ -118,7 +107,7 @@ const ScrollAnimation = styled.div`
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
-    top: 48vh;
+    top: 28vh;
     position: relative;
     `}
   ${media.tablet`
@@ -135,6 +124,21 @@ const PanelHeader = styled.h4`
   text-align: center;
 `;
 
+const HeroImage = styled.img`
+  ${media.handheld`
+    visibility: hidden;
+    height: 0px;
+  `}
+  ${media.desktop`
+    visibility: visible;
+    height: unset;
+  opacity: .75;
+  width: 100%;
+  position: absolute;
+  `}
+  
+`
+
 
 class IndexPage extends React.Component  {
 
@@ -143,11 +147,12 @@ class IndexPage extends React.Component  {
     return (
   <Container id={'top'}>
     <TitlePanel>
+    <HeroImage src={Hero} />
       <Name>
-        q: Who is Scott O&#39;Toole?
+        Scott O&#39;Toole
       </Name>
       <Subtitle>
-        a: web developer.
+        web developer
       </Subtitle>
       <ScrollAnimation>
         scroll
@@ -156,6 +161,7 @@ class IndexPage extends React.Component  {
         <br />
       </ScrollAnimation>
     </TitlePanel>
+   
     <Bio />
     <Projects />
     <Footer />

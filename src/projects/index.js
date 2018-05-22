@@ -171,8 +171,6 @@ const ProjectTitle = styled.h1`
 
 `;
 
-
-
 const Projects = () => (
       <WorkPanel id = { 'work'}>
       <div>

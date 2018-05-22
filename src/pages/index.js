@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome';
 import {media} from '../style-utils'
 import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMarker} from 'react-icons/lib/fa'
 import Fade from 'react-reveal/Fade';
-import selfie from '../selfie/Head.png'
+import Bio from '../bio'
 import Footer from '../components/Footer'
 import Projects from '../projects'
 
@@ -49,8 +49,8 @@ const Panel = styled.div`
 `;
 
 const TitlePanel = Panel.extend`
-  position: fixed;
   padding-top: 10vh;
+  height: 100vh;
 `;
 
 const Panel1= Panel.extend`
@@ -77,7 +77,7 @@ const ButtonWrapper = styled.div`
 const Subtitle = styled.p`
   ${media.handheld`
     margin-top:50px;
-    padding-left: 6px;
+    padding-left: 20px;
     `}
   ${media.tablet`
     font-size: 23px;
@@ -91,26 +91,6 @@ const Subtitle = styled.p`
     margin-bottom: 0px;
     line-height: 1.1;
     `}
-`;
-
-const Bio = styled.p`
-  ${media.handheld`
-    text-align: center;
-    padding-top: 20px;
-    font-size: 17px;
-    `}
-  ${media.tablet`
-    padding-top: 47px;
-    font-size: 17px;
-    line-height: 1.3;
-    `}
-  ${media.desktop`
-    font-size: 18px;
-    margin-bottom: 0px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  `}
 `;
 
 const Name = styled.h1`
@@ -138,8 +118,8 @@ const ScrollAnimation = styled.div`
     font-size: 20px;
     text-align: center;
     animation: ${PulsateText} 2s infinite;
-    bottom: 40px;
-    padding-top: 72px;
+    top: 48vh;
+    position: relative;
     `}
   ${media.tablet`
     `}
@@ -147,64 +127,8 @@ const ScrollAnimation = styled.div`
     `}
   `;
 
-const HeyThere = styled.h1`
-  color: cyan;
-  margin-bottom: 0px;
-  text-align: center;
-`;
-
-const EmailLink = TinyLink.extend`
-  ${media.handheld`
-    color: #f8f8ff;
-  font-size: 16px;
-  letter-spaceing: 3px;
-    `}
-    ${media.tablet`
-      font-size: 22px;
-      `}
-  ${media.desktop`
-    font-size: 28px;
-    `}
-`;
-
-const Selfie = styled.img`
-  ${media.handheld`
-    height: 250px;
-    float: none;
-    `}
-  ${media.tablet`
-    `}
-  ${media.desktop`
-    margin-top: 70px;
-    margin-bottom: 67px;
-    `}
-  ${media.extraBig`
-    margin-top: 4vh;
-    height: 500px;
-    `}
-`;
-
-const SelfieDiv = styled.div`
-  ${media.handheld`
-    text-align: center;
-    `}
-  ${media.tablet`
-    text-align: none;
-    `}
-`
-const BioEmail = styled.span`
-  ${media.handheld`
-    margin-top: 5vh;
-    display: block;
-    `}
-`;
-
 const Container = styled.div`
   position: relative;
-`;
-
-const InvisiblePanel = Panel.extend`
-  height: 100vh;
 `;
 
 const PanelHeader = styled.h4`
@@ -219,9 +143,11 @@ class IndexPage extends React.Component  {
     return (
   <Container id={'top'}>
     <TitlePanel>
-      <Name>I&#39;m Scott O&#39;Toole.</Name>
-      <Subtitle>I build websites and apps.
-        <br /><br />
+      <Name>
+        q: Who is Scott O&#39;Toole?
+      </Name>
+      <Subtitle>
+        a: web developer.
       </Subtitle>
       <ScrollAnimation>
         scroll
@@ -230,36 +156,9 @@ class IndexPage extends React.Component  {
         <br />
       </ScrollAnimation>
     </TitlePanel>
-    <InvisiblePanel>
-    </InvisiblePanel>
-    <Panel1 id={'about'}>
-      <div>
-        <PanelHeader>about</PanelHeader>
-      </div>
-      <SelfieDiv><Selfie src={selfie} /></SelfieDiv>
-        <HeyThere>Hey there.</HeyThere>
-        <br />
-          <Bio>
-            I like to do what's best for the project. I'm a fan of mobile-first development.
-            <br /><br />
-            My toolbox:<br />
-            <b>Front-end:</b> ReactJS, Redux, Redux-Form, JQuery, CSS, HTML, styled-components, Gatsby, Netlify, Chrome DevTools
-            <br />
-            <b>Back-end:</b> Node, Express, mLab, Mongoose, MongoDB, Heroku, REST API
-            <br />
-            <b>Testing:</b> Mocha, Chai, Enzyme, Jest
-            <br />
-            <b>Version Control:</b> Git and Github
-            <BioEmail>
-            I am currently taking on new projects. Get in touch via my&nbsp;
-            <EmailLink href={'mailto:scottmatthewotoole@gmail.com'} style={{textDecoration: 'underline', fontSize: 'inherit'}}>email.</EmailLink>
-            </BioEmail>
-            <br />
-            Continue scrolling to see my work.
-          </Bio>
-      </Panel1>
-      <Projects />
-      <Footer />
+    <Bio />
+    <Projects />
+    <Footer />
   </Container>
 )
 }

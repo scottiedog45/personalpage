@@ -48,14 +48,6 @@ const PanelHeader = styled.h4`
   text-align: center;
 `;
 
-const Hr = styled.hr`
-  ${media.handheld`
-background-color: #f8f8ff;
-height: 2px;
-
-    `}
-    `;
-
 const ProjectPanel = styled.div`
   padding-top: 50px
   padding-bottom: 50px;

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen:300|Raleway:300|Anton:400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
 html {
-  font-family: Raleway, sans-serif;
+  font-family: Montserrat;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -41,6 +41,7 @@ template {
   display: none;
 }
 a {
+  font-family: Montserrat;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
@@ -69,6 +70,7 @@ dfn {
   font-style: italic;
 }
 h1 {
+  font-family: Montserrat;
   font-size: 2em;
   margin: .67em 0;
 }
@@ -193,7 +195,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em Monthserrat;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -211,7 +213,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Montserrat;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

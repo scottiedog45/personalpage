@@ -80,7 +80,7 @@ const BlogLinkWrapper = ContactLinkWrapper.extend`
 const Copyright = styled.p`
   display: block;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: Montserrat;
   margin-top: 5vh;
 `;
 
@@ -99,6 +99,7 @@ const EmailLink = TinyLink.extend`
 
 const PanelHeader = styled.h4`
   text-align: center;
+  font-family: Montserrat;
 `;
 
 const Footer = () => (

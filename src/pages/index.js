@@ -27,7 +27,6 @@ const PulsateText = keyframes`
 
 const Panel = styled.div`
   ${media.handheld`
-    font-family: 'Raleway', sans-serif;
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
@@ -67,7 +66,6 @@ const Name = styled.h1`
   ${media.handheld`
     padding-top: 30vh
     font-weight: 100;
-    font-family: inherit;
     font-size: 29px;
     margin-bottom: 10px;
     position: relative;

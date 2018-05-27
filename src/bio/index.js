@@ -5,7 +5,6 @@ import selfie from '../selfie/Head.png'
 
 const Panel = styled.div`
   ${media.handheld`
-    font-family: 'Raleway', sans-serif;
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
@@ -64,6 +63,7 @@ const SelfieDiv = styled.div`
 
 const PanelHeader = styled.h4`
   text-align: center;
+  font-family: Montserrat;
 `;
 
 class Bio extends React.Component{

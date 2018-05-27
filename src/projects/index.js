@@ -27,7 +27,6 @@ import { media } from '../style-utils'
 
 const Panel = styled.div`
   ${media.handheld`
-    font-family: 'Raleway', sans-serif;
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
@@ -45,6 +44,7 @@ const WorkPanel = Panel.extend`
 
 const PanelHeader = styled.h4`
   text-align: center;
+  font-family: Montserrat;
 `;
 
 const ProjectPanel = styled.div`

@@ -41,8 +41,8 @@ const LinkContainer = styled.div`
 `
 const TopLeftName = styled.p`
   display: relative;
+  padding-left: 25px;
   float: left;
-  padding-left: 50px;
   padding-top: 20px;
   margin: 0;
 `;

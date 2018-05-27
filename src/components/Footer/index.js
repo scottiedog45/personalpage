@@ -16,7 +16,6 @@ const FooterDiv = styled.div`
   text-align: center;
   font-family: 'Raleway', sans-serif;
   position: relative;
-  background-color: #070729;
 `;
 
 const TinyLink = styled.a`
@@ -24,16 +23,15 @@ const TinyLink = styled.a`
   text-decoration: none;
   &:hover{
     text-decoration: line-through;
+    color: cyan;
   }
   &:visited{
-    color: #f8f8ff;
     text-decoration: none;
   }
 `;
 
 const ContactFloater = styled.div`
   font-size: 40px;
-  color: #f8f8ff;
   width: 50%;
   display: flex;
   justify-content: space-around;
@@ -43,7 +41,6 @@ const ContactFloater = styled.div`
 `;
 
 const ContactLink = styled.a`
-  color: inherit;
   &:hover{
     color: cyan;
   }
@@ -63,7 +60,6 @@ const ResumeLinkWrapper = ContactLinkWrapper.extend`
 `;
 
 const ResumeLink = styled.a`
-  color: #f8f8ff;
   word-wrap: normal;
   text-decoration: none;
   &:hover{
@@ -90,7 +86,6 @@ const Copyright = styled.p`
 
 const EmailLink = TinyLink.extend`
   ${media.handheld`
-    color: #f8f8ff;
   font-size: 16px;
   letter-spaceing: 3px;
     `}

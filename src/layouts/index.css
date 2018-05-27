@@ -44,7 +44,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
-  color: #f8f8ff;
+  color: blue;
 }
 a:active,
 a:hover {
@@ -52,7 +52,7 @@ a:hover {
   text-decoration: line-through;
 }
 a:visited {
-  color: #f8f8ff;
+  color: blue;
   text-decoration: none;
 }
 abbr[title] {

@@ -41,7 +41,6 @@ const Panel = styled.div`
 const WorkPanel = Panel.extend`
   z-index: 2;
   position: relative;
-  background-color: #242454;
 `;
 
 const PanelHeader = styled.h4`
@@ -172,7 +171,7 @@ const ProjectTitle = styled.h1`
 `;
 
 const Projects = () => (
-      <WorkPanel id = { 'work'}>
+      <WorkPanel id = { 'projects'}>
       <div>
         <PanelHeader>work</PanelHeader>
       </div>

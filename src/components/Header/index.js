@@ -2,21 +2,16 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome';
-
+import MobileMenu from './mobileMenu'
 import Scrollchor from 'react-scrollchor'
 
 import { media } from '../../../src/style-utils'
 
-//add burger menu!
+
 
 const TinyMenuWrapper = styled.div`
   ${media.handheld`
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-right: none;
-    padding-top: 30px;
+    display: none;
   `}
   ${media.desktop`
   width: unset;
@@ -26,7 +21,7 @@ const TinyMenuWrapper = styled.div`
   text-decoration: none;
   float: right;
   padding-right: 50px;
-  padding-top: 15px;`}
+  `}
 `;
 
 const HeaderWrapper = styled.div`
@@ -35,36 +30,35 @@ const HeaderWrapper = styled.div`
   z-index: 3;
   font-family: 'Raleway', sans-serif;
   width: 100%;
+  background-color: white;
+  box-shadow: 0px 9px 15px #88888899;
+  padding-bottom: 20px;
 `;
 
 const LinkContainer = styled.div`
   display: inline
+  margin-left: 50px;
 `
-
+const TopLeftName = styled.p`
+  display: relative;
+  float: left;
+  padding-left: 50px;
+  padding-top: 20px;
+  margin: 0;
+`;
 
 class Header extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectSection : 'about'
-    }
-  }
 
   render(){
 
     return (
       <HeaderWrapper>
-          <TinyMenuWrapper>
-            <LinkContainer>
-              <Scrollchor to='#bio' animate={{ duration: 800 }}>bio</Scrollchor>
-            </LinkContainer>
-            <LinkContainer style={{ marginLeft: 50, display: 'inline' }}>
-              <Scrollchor to='#work' animate={{ duration: 800 }}>work</Scrollchor>
-            </LinkContainer>
-            <LinkContainer style={{ marginLeft: 50, display: 'inline' }}>
-              <Scrollchor to='#contact' animate={{ duration: 800 }}>contact</Scrollchor>
-            </LinkContainer>
-          </TinyMenuWrapper>
+          <Scrollchor to='top' animate={{duration: 2000}}>
+            <TopLeftName>
+              scotto'toole
+            </TopLeftName>
+          </Scrollchor>
+          <MobileMenu />
       </HeaderWrapper>
     )
   }

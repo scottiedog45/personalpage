@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import './index.css'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div id={'outer-container'}>
     <Helmet
       title="Scott O&#39;Toole"
       meta={[
@@ -20,9 +20,9 @@ const TemplateWrapper = ({ children }) => (
     <Header />
     <div
       style={{
-        color: '#f8f8ff',
+        color: 'black',
         margin: '0 auto',
-        backgroundColor: '#070729ed',
+        backgroundColor: 'white',
         paddingTop: 0,
       }}
     >

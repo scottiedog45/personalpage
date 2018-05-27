@@ -10,31 +10,18 @@ import Bio from '../bio'
 import Footer from '../components/Footer'
 import Projects from '../projects'
 import Services from '../services'
-import Hero from '../images/hero.png'
 
 //styling small to large
 
-const TinyLink = styled.a`
-  cursor: pointer;
-  text-decoration: none;
-  &:hover{
-    text-decoration: line-through;
-  }
-  &:visited{
-    color: #f8f8ff;
-    text-decoration: none;
-  }
-`;
-
 const PulsateText = keyframes`
   0% {
-    color: #191938;
+    color: white;
   }
   50% {
-    color: inherit;
+    color: black;
   }
   100% {
-    color: #191938;
+    color: white;
   }
 `;
 
@@ -58,9 +45,8 @@ const TitlePanel = Panel.extend`
 const Subtitle = styled.p`
   ${media.handheld`
     margin-top:50px;
- 
     position: relative;
-    z-index: 3;
+    z-index: 2;
     text-align: center;
     `}
   ${media.tablet`
@@ -68,7 +54,6 @@ const Subtitle = styled.p`
     line-height: 1.1;
     `}
   ${media.desktop`
-    
     font-size: 23px;
     width: 100%;
     margin-left: auto;
@@ -81,7 +66,6 @@ const Subtitle = styled.p`
 const Name = styled.h1`
   ${media.handheld`
     padding-top: 30vh
-    color: white;
     font-weight: 100;
     font-family: inherit;
     font-size: 29px;
@@ -94,7 +78,6 @@ const Name = styled.h1`
     font-size: 40px;
     `}
   ${media.desktop`
-    
     display: block;
     font-size: 80px;
     `}
@@ -124,30 +107,15 @@ const PanelHeader = styled.h4`
   text-align: center;
 `;
 
-const HeroImage = styled.img`
-  ${media.handheld`
-    visibility: hidden;
-    height: 0px;
-  `}
-  ${media.desktop`
-    visibility: visible;
-    height: unset;
-  opacity: .75;
-  width: 100%;
-  position: absolute;
-  `}
-  
-`
-
 
 class IndexPage extends React.Component  {
 
   render() {
 
     return (
+  <div id={'page-wrap'}>
   <Container id={'top'}>
     <TitlePanel>
-    <HeroImage src={Hero} />
       <Name>
         Scott O&#39;Toole
       </Name>
@@ -166,6 +134,7 @@ class IndexPage extends React.Component  {
     <Projects />
     <Footer />
   </Container>
+  </div>
 )
 }
 }

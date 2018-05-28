@@ -18,7 +18,7 @@ import reduxForm from '../icons/redux form.png'
 
 import haikuMac from '../screenshots/haikuMac.png'
 import leevMac from '../screenshots/leevMac.png'
-import piqnicMac from '../screenshots/piqnicMac.png'
+import simonVid from '../video/simonVid.mp4'
 
 import styled from 'styled-components'
 
@@ -167,7 +167,11 @@ const ProjectTitle = styled.h1`
     text-align: center;
     font-size: 65px;
     `}
+`;
 
+const SimonVideo = styled.video`
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Projects = () => (
@@ -177,29 +181,27 @@ const Projects = () => (
       </div>
       <ProjectPanel>
         <ProjectTitle>
-          piqnic
+          simon
             </ProjectTitle>
         <UrlWrapper>
-          <LiveUrl
-            href={'https://diplomat-cat-50211.netlify.com/'}
-            target={'_blank'}>
-            Live Site
-            </LiveUrl>
           <GitUrl
-            href={'https://github.com/scottiedog45/piqnic'}
+          href={'https://github.com/scottiedog45/simon'}
             target={'_blank'}>
             Github Repo
             </GitUrl>
         </UrlWrapper>
-        <Screenshot src={piqnicMac} alt={'screenshot of piqnic app'} />
+        <SimonVideo src={simonVid} height={400} width={200} type={'video/mp4'}  autoPlay loop muted/>
         <IconWrapper>
           <Icon src={html} alt={'html logo'} />
           <Icon src={css} alt={'css logo'} />
           <Icon src={js} alt={'js logo'} />
-          <Icon src={jquery} alt={'jquery logo'} />
+          <Icon src={styledcomponents} alt={'styledcomponents logo'} />
+          <Icon src={react} alt={'react logo'} />
+          <Icon src={express} alt={'express logo'} />
+          <Icon src={node} alt={'node logo'} />
         </IconWrapper>
         <Description>
-          Google Maps API + OpenWeather API + a dash of jQuery = piqnic. Hungry yet?
+          A dive into the React Native API. Feel free to download the repo and have a go!
             </Description>
       </ProjectPanel>
       <ProjectPanel>

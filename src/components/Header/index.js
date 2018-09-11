@@ -30,8 +30,7 @@ const HeaderWrapper = styled.div`
   z-index: 3;
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  background-color: white;
-  box-shadow: 0px 9px 15px #88888899;
+  background-color: inherit;
   padding-bottom: 20px;
 `;
 

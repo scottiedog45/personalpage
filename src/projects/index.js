@@ -98,14 +98,19 @@ const IconWrapper = styled.div`
   ${media.handheld`
     justify-content: space-around;
     filter: grayscale(85%);
-    display: flex;
+    display: inline;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     flex-wrap: wrap;
     bottom: 20px;
-    max-width: 90%;
     grid-area: icons;
+    &:after {
+      width: 0;
+    };
+    &:before {
+      width: 0;
+    };
     `}
     ${media.tablet`
     justify-content: space-between;

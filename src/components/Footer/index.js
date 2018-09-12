@@ -22,7 +22,7 @@ const TinyLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   &:hover{
-    text-decoration: line-through;
+    transform: scale(1.1);
     color: cyan;
   }
   &:visited{

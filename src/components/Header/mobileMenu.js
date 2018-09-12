@@ -17,6 +17,7 @@ const styles = {
     top: '18px'
   },
   bmBurgerBars: {
+    height: 1,
     background: 'blue'
   },
   bmCrossButton: {

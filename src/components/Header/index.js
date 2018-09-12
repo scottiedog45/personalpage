@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome';
 import MobileMenu from './mobileMenu'
-import Scrollchor from 'react-scrollchor'
 
 import { media } from '../../../src/style-utils'
 
@@ -28,7 +27,6 @@ const HeaderWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 3;
-  font-family: 'Raleway', sans-serif;
   width: 100%;
   background-color: inherit;
   padding-bottom: 20px;
@@ -38,12 +36,19 @@ const LinkContainer = styled.div`
   display: inline
   margin-left: 50px;
 `
-const TopLeftName = styled.p`
-  display: relative;
+const TopLeftName = styled.a`
+  color: blue;
+  font-weight: 100;
+  display: inline-block;
   padding-left: 25px;
   float: left;
   padding-top: 20px;
   margin: 0;
+  transition: all 1s
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.2)
+  };
 `;
 
 class Header extends React.Component{
@@ -52,12 +57,10 @@ class Header extends React.Component{
 
     return (
       <HeaderWrapper>
-          <Scrollchor to='top' animate={{duration: 2000}}>
-            <TopLeftName>
-              scotto'toole
-            </TopLeftName>
-          </Scrollchor>
-          <MobileMenu />
+        <TopLeftName>
+          Scott O'Toole
+        </TopLeftName>
+        <MobileMenu />
       </HeaderWrapper>
     )
   }

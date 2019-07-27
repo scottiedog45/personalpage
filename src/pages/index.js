@@ -1,15 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Scrollchor from 'react-scrollchor'
 import FontAwesome from 'react-fontawesome';
-import {media} from '../style-utils'
-import {FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMarker} from 'react-icons/lib/fa'
+import { media } from '../style-utils'
+import { FaAngleDoubleDown, FaGithubSquare, FaEnvelope, FaLinkedinSquare, FaMapMarker } from 'react-icons/lib/fa'
 import Fade from 'react-reveal/Fade';
 import Bio from '../bio'
 import Footer from '../components/Footer'
 import Projects from '../projects'
 import Services from '../services'
+
+import MinimalistLinks from '../minimalistLinks'
 
 //styling small to large
 
@@ -106,35 +108,36 @@ const PanelHeader = styled.h4`
 `;
 
 
-class IndexPage extends React.Component  {
+class IndexPage extends React.Component {
 
   render() {
 
     return (
-  <div id={'page-wrap'}>
-  <Container id={'top'}>
-    <TitlePanel>
-      <Name>
-        Scott O&#39;Toole
-      </Name>
-      <Subtitle>
-        web developer
+      <div id={'page-wrap'}>
+        {/* <Container id={'top'}>
+          <TitlePanel>
+            <Name>
+              Scott O&#39;Toole
+      </Name> */}
+        <MinimalistLinks />
+        {/* <Subtitle>
+              web developer
       </Subtitle>
-      <ScrollAnimation>
-        scroll
+            <ScrollAnimation>
+              scroll
         <br />
-        <FaAngleDoubleDown />
-        <br />
-      </ScrollAnimation>
-    </TitlePanel>
-   
-    <Bio />
-    <Projects />
-    <Footer />
-  </Container>
-  </div>
-)
-}
+              <FaAngleDoubleDown />
+              <br />
+            </ScrollAnimation>
+          </TitlePanel>
+
+          <Bio />
+          <Projects />
+          <Footer />
+        </Container> */}
+      </div>
+    )
+  }
 }
 
 export default IndexPage
